@@ -752,4 +752,16 @@
     Private Sub Stng_ShowLicense_Click(sender As Object, e As EventArgs) Handles Stng_ShowLicense.Click
         Licence.Show()
     End Sub
+
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
+        Process.Start("http://blueflap.weebly.com/help")
+    End Sub
+
+    Private Sub Button2_Click_1(sender As Object, e As EventArgs) Handles stng_simpleworld.Click
+        Process.Start("http://simpleworld-website.weebly.com")
+    End Sub
+
+    Private Sub Button3_Click_1(sender As Object, e As EventArgs) Handles stng_github.Click
+        Process.Start("https://github.com/SimpleSoftwares/Blueflap")
+    End Sub
 End Class

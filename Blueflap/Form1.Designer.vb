@@ -59,6 +59,7 @@ Partial Class Fenetre_Principale
         Me.Menu_Lock = New System.Windows.Forms.ToolStripMenuItem()
         Me.Menu_FullScr = New System.Windows.Forms.ToolStripMenuItem()
         Me.Settings = New System.Windows.Forms.Panel()
+        Me.Stng_ShowLicense = New System.Windows.Forms.Button()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.Stng_bluestart_checkbox = New System.Windows.Forms.CheckBox()
         Me.Stng_Volet_Mousehover_agrandir = New System.Windows.Forms.CheckBox()
@@ -101,7 +102,6 @@ Partial Class Fenetre_Principale
         Me.Stng_MoteurRecherche_choose = New System.Windows.Forms.ComboBox()
         Me.Label = New System.Windows.Forms.Label()
         Me.Settings_title = New System.Windows.Forms.Label()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.ShapeContainer1 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
         Me.RectangleShape2 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.RectangleShape1 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
@@ -155,7 +155,12 @@ Partial Class Fenetre_Principale
         Me.BS_DateSetColor = New System.Windows.Forms.Button()
         Me.BS_ImgChoose = New System.Windows.Forms.Button()
         Me.PictureBox9 = New System.Windows.Forms.PictureBox()
-        Me.Stng_ShowLicense = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.stng_simpleworld = New System.Windows.Forms.Button()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.stng_github = New System.Windows.Forms.Button()
+        Me.LineShape2 = New Microsoft.VisualBasic.PowerPacks.LineShape()
         Me.Navigateur.SuspendLayout()
         CType(Me.Notif_internet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
@@ -171,7 +176,6 @@ Partial Class Fenetre_Principale
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Fight.SuspendLayout()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer1.Panel1.SuspendLayout()
@@ -201,7 +205,7 @@ Partial Class Fenetre_Principale
         Me.Navigateur.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Navigateur.Location = New System.Drawing.Point(0, 0)
         Me.Navigateur.Name = "Navigateur"
-        Me.Navigateur.Size = New System.Drawing.Size(1117, 608)
+        Me.Navigateur.Size = New System.Drawing.Size(1117, 607)
         Me.Navigateur.TabIndex = 0
         '
         'Notif_internet
@@ -209,7 +213,7 @@ Partial Class Fenetre_Principale
         Me.Notif_internet.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Notif_internet.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.Notif_internet.Image = CType(resources.GetObject("Notif_internet.Image"), System.Drawing.Image)
-        Me.Notif_internet.Location = New System.Drawing.Point(0, 527)
+        Me.Notif_internet.Location = New System.Drawing.Point(0, 526)
         Me.Notif_internet.Name = "Notif_internet"
         Me.Notif_internet.Size = New System.Drawing.Size(220, 81)
         Me.Notif_internet.TabIndex = 4
@@ -220,7 +224,7 @@ Partial Class Fenetre_Principale
         '
         Me.Web.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Web.Location = New System.Drawing.Point(160, 28)
-        Me.Web.Size = New System.Drawing.Size(725, 580)
+        Me.Web.Size = New System.Drawing.Size(725, 579)
         Me.Web.TabIndex = 7
         '
         'Panel1
@@ -235,7 +239,7 @@ Partial Class Fenetre_Principale
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Right
         Me.Panel1.Location = New System.Drawing.Point(885, 28)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(232, 580)
+        Me.Panel1.Size = New System.Drawing.Size(232, 579)
         Me.Panel1.TabIndex = 5
         Me.Panel1.Visible = False
         '
@@ -253,7 +257,7 @@ Partial Class Fenetre_Principale
         Me.Fav_Historique_List.Location = New System.Drawing.Point(0, 41)
         Me.Fav_Historique_List.Name = "Fav_Historique_List"
         Me.Fav_Historique_List.ScrollAlwaysVisible = True
-        Me.Fav_Historique_List.Size = New System.Drawing.Size(232, 540)
+        Me.Fav_Historique_List.Size = New System.Drawing.Size(232, 525)
         Me.Fav_Historique_List.TabIndex = 5
         Me.Fav_Historique_List.Visible = False
         '
@@ -335,7 +339,7 @@ Partial Class Fenetre_Principale
         Me.Fav_fav_List.Location = New System.Drawing.Point(0, 41)
         Me.Fav_fav_List.Name = "Fav_fav_List"
         Me.Fav_fav_List.ScrollAlwaysVisible = True
-        Me.Fav_fav_List.Size = New System.Drawing.Size(232, 540)
+        Me.Fav_fav_List.Size = New System.Drawing.Size(232, 525)
         Me.Fav_fav_List.TabIndex = 0
         '
         'Fav_Favoris
@@ -488,7 +492,7 @@ Partial Class Fenetre_Principale
         Me.voletlateral.Location = New System.Drawing.Point(0, 0)
         Me.voletlateral.Name = "voletlateral"
         Me.voletlateral.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
-        Me.voletlateral.Size = New System.Drawing.Size(160, 608)
+        Me.voletlateral.Size = New System.Drawing.Size(160, 607)
         Me.voletlateral.TabIndex = 1
         Me.voletlateral.Text = "MenuStrip1"
         '
@@ -628,6 +632,11 @@ Partial Class Fenetre_Principale
         '
         Me.Settings.AutoScroll = True
         Me.Settings.AutoScrollMargin = New System.Drawing.Size(15, 15)
+        Me.Settings.Controls.Add(Me.stng_github)
+        Me.Settings.Controls.Add(Me.Label10)
+        Me.Settings.Controls.Add(Me.stng_simpleworld)
+        Me.Settings.Controls.Add(Me.Label2)
+        Me.Settings.Controls.Add(Me.Button1)
         Me.Settings.Controls.Add(Me.Stng_ShowLicense)
         Me.Settings.Controls.Add(Me.Label17)
         Me.Settings.Controls.Add(Me.Stng_bluestart_checkbox)
@@ -671,13 +680,25 @@ Partial Class Fenetre_Principale
         Me.Settings.Controls.Add(Me.Stng_MoteurRecherche_choose)
         Me.Settings.Controls.Add(Me.Label)
         Me.Settings.Controls.Add(Me.Settings_title)
-        Me.Settings.Controls.Add(Me.PictureBox1)
         Me.Settings.Controls.Add(Me.ShapeContainer1)
         Me.Settings.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Settings.Location = New System.Drawing.Point(0, 0)
         Me.Settings.Name = "Settings"
-        Me.Settings.Size = New System.Drawing.Size(1117, 608)
+        Me.Settings.Size = New System.Drawing.Size(1117, 607)
         Me.Settings.TabIndex = 1
+        '
+        'Stng_ShowLicense
+        '
+        Me.Stng_ShowLicense.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Stng_ShowLicense.FlatAppearance.BorderSize = 0
+        Me.Stng_ShowLicense.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Stng_ShowLicense.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Stng_ShowLicense.Location = New System.Drawing.Point(1047, 4)
+        Me.Stng_ShowLicense.Name = "Stng_ShowLicense"
+        Me.Stng_ShowLicense.Size = New System.Drawing.Size(48, 19)
+        Me.Stng_ShowLicense.TabIndex = 47
+        Me.Stng_ShowLicense.Text = "Licence"
+        Me.Stng_ShowLicense.UseVisualStyleBackColor = True
         '
         'Label17
         '
@@ -966,7 +987,7 @@ Partial Class Fenetre_Principale
         Me.Stng_VersionSystem.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Stng_VersionSystem.AutoSize = True
         Me.Stng_VersionSystem.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Stng_VersionSystem.Location = New System.Drawing.Point(1015, 23)
+        Me.Stng_VersionSystem.Location = New System.Drawing.Point(998, 23)
         Me.Stng_VersionSystem.Name = "Stng_VersionSystem"
         Me.Stng_VersionSystem.Size = New System.Drawing.Size(97, 26)
         Me.Stng_VersionSystem.TabIndex = 19
@@ -1152,24 +1173,13 @@ Partial Class Fenetre_Principale
         Me.Settings_title.TabIndex = 0
         Me.Settings_title.Text = "Paramètres"
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(953, 455)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(199, 198)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 6
-        Me.PictureBox1.TabStop = False
-        '
         'ShapeContainer1
         '
         Me.ShapeContainer1.Location = New System.Drawing.Point(0, 0)
         Me.ShapeContainer1.Margin = New System.Windows.Forms.Padding(0)
         Me.ShapeContainer1.Name = "ShapeContainer1"
-        Me.ShapeContainer1.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RectangleShape2, Me.RectangleShape1})
-        Me.ShapeContainer1.Size = New System.Drawing.Size(1117, 608)
+        Me.ShapeContainer1.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.LineShape2, Me.RectangleShape2, Me.RectangleShape1})
+        Me.ShapeContainer1.Size = New System.Drawing.Size(1100, 722)
         Me.ShapeContainer1.TabIndex = 17
         Me.ShapeContainer1.TabStop = False
         '
@@ -1199,7 +1209,7 @@ Partial Class Fenetre_Principale
         Me.Fight.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Fight.Location = New System.Drawing.Point(0, 0)
         Me.Fight.Name = "Fight"
-        Me.Fight.Size = New System.Drawing.Size(1117, 608)
+        Me.Fight.Size = New System.Drawing.Size(1117, 607)
         Me.Fight.TabIndex = 2
         '
         'SplitContainer1
@@ -1217,7 +1227,7 @@ Partial Class Fenetre_Principale
         'SplitContainer1.Panel2
         '
         Me.SplitContainer1.Panel2.Controls.Add(Me.SrchF_fighter_2)
-        Me.SplitContainer1.Size = New System.Drawing.Size(1117, 552)
+        Me.SplitContainer1.Size = New System.Drawing.Size(1117, 551)
         Me.SplitContainer1.SplitterDistance = 558
         Me.SplitContainer1.TabIndex = 0
         '
@@ -1225,14 +1235,14 @@ Partial Class Fenetre_Principale
         '
         Me.SrchF_fighter_1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.SrchF_fighter_1.Location = New System.Drawing.Point(0, 0)
-        Me.SrchF_fighter_1.Size = New System.Drawing.Size(558, 552)
+        Me.SrchF_fighter_1.Size = New System.Drawing.Size(558, 551)
         Me.SrchF_fighter_1.TabIndex = 0
         '
         'SrchF_fighter_2
         '
         Me.SrchF_fighter_2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.SrchF_fighter_2.Location = New System.Drawing.Point(0, 0)
-        Me.SrchF_fighter_2.Size = New System.Drawing.Size(555, 552)
+        Me.SrchF_fighter_2.Size = New System.Drawing.Size(555, 551)
         Me.SrchF_fighter_2.TabIndex = 0
         '
         'SrchF_Fightbutton
@@ -1302,7 +1312,7 @@ Partial Class Fenetre_Principale
         Me.ShapeContainer2.Margin = New System.Windows.Forms.Padding(0)
         Me.ShapeContainer2.Name = "ShapeContainer2"
         Me.ShapeContainer2.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.LineShape1})
-        Me.ShapeContainer2.Size = New System.Drawing.Size(1117, 608)
+        Me.ShapeContainer2.Size = New System.Drawing.Size(1117, 607)
         Me.ShapeContainer2.TabIndex = 5
         Me.ShapeContainer2.TabStop = False
         '
@@ -1323,7 +1333,7 @@ Partial Class Fenetre_Principale
         Me.Verrouillage.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Verrouillage.Location = New System.Drawing.Point(0, 0)
         Me.Verrouillage.Name = "Verrouillage"
-        Me.Verrouillage.Size = New System.Drawing.Size(1117, 608)
+        Me.Verrouillage.Size = New System.Drawing.Size(1117, 607)
         Me.Verrouillage.TabIndex = 3
         '
         'Verr_BlackEffect
@@ -1450,7 +1460,7 @@ Partial Class Fenetre_Principale
         Me.Infos.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Infos.Location = New System.Drawing.Point(0, 0)
         Me.Infos.Name = "Infos"
-        Me.Infos.Size = New System.Drawing.Size(1117, 608)
+        Me.Infos.Size = New System.Drawing.Size(1117, 607)
         Me.Infos.TabIndex = 4
         '
         'Infos_code_source
@@ -1472,7 +1482,7 @@ Partial Class Fenetre_Principale
         Me.Infos_code_source.Paddings = New System.Windows.Forms.Padding(0)
         Me.Infos_code_source.ReadOnly = True
         Me.Infos_code_source.SelectionColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Infos_code_source.Size = New System.Drawing.Size(1040, 414)
+        Me.Infos_code_source.Size = New System.Drawing.Size(1040, 413)
         Me.Infos_code_source.TabIndex = 14
         Me.Infos_code_source.Text = "Patientez..."
         Me.Infos_code_source.Visible = False
@@ -1620,7 +1630,7 @@ Partial Class Fenetre_Principale
         Me.Bluestart.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Bluestart.Location = New System.Drawing.Point(0, 0)
         Me.Bluestart.Name = "Bluestart"
-        Me.Bluestart.Size = New System.Drawing.Size(1117, 608)
+        Me.Bluestart.Size = New System.Drawing.Size(1117, 607)
         Me.Bluestart.TabIndex = 5
         Me.Bluestart.Tag = Global.Blueflap.My.MySettings.Default.Hey
         Me.Bluestart.Visible = False
@@ -1635,7 +1645,7 @@ Partial Class Fenetre_Principale
         Me.BS_Searchfight.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
         Me.BS_Searchfight.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.BS_Searchfight.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BS_Searchfight.Location = New System.Drawing.Point(161, 542)
+        Me.BS_Searchfight.Location = New System.Drawing.Point(161, 541)
         Me.BS_Searchfight.Name = "BS_Searchfight"
         Me.BS_Searchfight.Size = New System.Drawing.Size(54, 54)
         Me.BS_Searchfight.TabIndex = 9
@@ -1651,7 +1661,7 @@ Partial Class Fenetre_Principale
         Me.BS_Browser.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
         Me.BS_Browser.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.BS_Browser.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BS_Browser.Location = New System.Drawing.Point(29, 542)
+        Me.BS_Browser.Location = New System.Drawing.Point(29, 541)
         Me.BS_Browser.Name = "BS_Browser"
         Me.BS_Browser.Size = New System.Drawing.Size(54, 54)
         Me.BS_Browser.TabIndex = 8
@@ -1663,7 +1673,7 @@ Partial Class Fenetre_Principale
         Me.Bs_Favbulle.BackColor = System.Drawing.Color.Transparent
         Me.Bs_Favbulle.BackgroundImage = CType(resources.GetObject("Bs_Favbulle.BackgroundImage"), System.Drawing.Image)
         Me.Bs_Favbulle.Controls.Add(Me.BS_Favlist)
-        Me.Bs_Favbulle.Location = New System.Drawing.Point(33, 235)
+        Me.Bs_Favbulle.Location = New System.Drawing.Point(33, 234)
         Me.Bs_Favbulle.Name = "Bs_Favbulle"
         Me.Bs_Favbulle.Size = New System.Drawing.Size(182, 301)
         Me.Bs_Favbulle.TabIndex = 7
@@ -1694,7 +1704,7 @@ Partial Class Fenetre_Principale
         Me.BS_Fav.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
         Me.BS_Fav.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.BS_Fav.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BS_Fav.Location = New System.Drawing.Point(95, 542)
+        Me.BS_Fav.Location = New System.Drawing.Point(95, 541)
         Me.BS_Fav.Name = "BS_Fav"
         Me.BS_Fav.Size = New System.Drawing.Size(54, 54)
         Me.BS_Fav.TabIndex = 0
@@ -1819,25 +1829,79 @@ Partial Class Fenetre_Principale
         Me.PictureBox9.TabIndex = 1
         Me.PictureBox9.TabStop = False
         '
-        'Stng_ShowLicense
+        'Button1
         '
-        Me.Stng_ShowLicense.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Stng_ShowLicense.FlatAppearance.BorderSize = 0
-        Me.Stng_ShowLicense.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Stng_ShowLicense.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Stng_ShowLicense.Location = New System.Drawing.Point(1076, 4)
-        Me.Stng_ShowLicense.Name = "Stng_ShowLicense"
-        Me.Stng_ShowLicense.Size = New System.Drawing.Size(36, 19)
-        Me.Stng_ShowLicense.TabIndex = 47
-        Me.Stng_ShowLicense.Text = "GPL V2"
-        Me.Stng_ShowLicense.UseVisualStyleBackColor = True
+        Me.Button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Cyan
+        Me.Button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Segoe UI Light", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.Color.DeepSkyBlue
+        Me.Button1.Location = New System.Drawing.Point(328, 538)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(94, 25)
+        Me.Button1.TabIndex = 48
+        Me.Button1.Text = "Help Center"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Segoe UI Semilight", 11.0!)
+        Me.Label2.Location = New System.Drawing.Point(84, 616)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(40, 20)
+        Me.Label2.TabIndex = 49
+        Me.Label2.Text = "Devs"
+        '
+        'stng_simpleworld
+        '
+        Me.stng_simpleworld.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.stng_simpleworld.Font = New System.Drawing.Font("Segoe UI Light", 9.75!)
+        Me.stng_simpleworld.ForeColor = System.Drawing.Color.DeepSkyBlue
+        Me.stng_simpleworld.Location = New System.Drawing.Point(235, 609)
+        Me.stng_simpleworld.Name = "stng_simpleworld"
+        Me.stng_simpleworld.Size = New System.Drawing.Size(154, 35)
+        Me.stng_simpleworld.TabIndex = 50
+        Me.stng_simpleworld.Text = "Simpleworld"
+        Me.stng_simpleworld.UseVisualStyleBackColor = True
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Segoe UI Semilight", 11.0!)
+        Me.Label10.Location = New System.Drawing.Point(84, 679)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(78, 20)
+        Me.Label10.TabIndex = 51
+        Me.Label10.Text = "Contribuer"
+        '
+        'stng_github
+        '
+        Me.stng_github.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.stng_github.Font = New System.Drawing.Font("Segoe UI Light", 9.75!)
+        Me.stng_github.ForeColor = System.Drawing.Color.DeepSkyBlue
+        Me.stng_github.Location = New System.Drawing.Point(235, 672)
+        Me.stng_github.Name = "stng_github"
+        Me.stng_github.Size = New System.Drawing.Size(154, 35)
+        Me.stng_github.TabIndex = 52
+        Me.stng_github.Text = "GitHub"
+        Me.stng_github.UseVisualStyleBackColor = True
+        '
+        'LineShape2
+        '
+        Me.LineShape2.BorderColor = System.Drawing.SystemColors.AppWorkspace
+        Me.LineShape2.Name = "LineShape2"
+        Me.LineShape2.X1 = 88
+        Me.LineShape2.X2 = 818
+        Me.LineShape2.Y1 = 587
+        Me.LineShape2.Y2 = 587
         '
         'Fenetre_Principale
         '
         Me.AcceptButton = Me.GoButton
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1117, 608)
+        Me.ClientSize = New System.Drawing.Size(1117, 607)
         Me.Controls.Add(Me.Settings)
         Me.Controls.Add(Me.Navigateur)
         Me.Controls.Add(Me.Infos)
@@ -1870,7 +1934,6 @@ Partial Class Fenetre_Principale
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Fight.ResumeLayout(False)
         Me.Fight.PerformLayout()
         Me.SplitContainer1.Panel1.ResumeLayout(False)
@@ -1925,7 +1988,6 @@ Partial Class Fenetre_Principale
     Friend WithEvents Label As System.Windows.Forms.Label
     Friend WithEvents Stng_MoteurRecherche_URL As System.Windows.Forms.TextBox
     Friend WithEvents Notif_internet As System.Windows.Forms.PictureBox
-    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents Stng_HomePage_Url As System.Windows.Forms.TextBox
     Friend WithEvents label1 As System.Windows.Forms.Label
     Friend WithEvents Stng_ErreurURLHomepage As System.Windows.Forms.Label
@@ -2029,5 +2091,11 @@ Partial Class Fenetre_Principale
     Friend WithEvents BS_Browser As System.Windows.Forms.Button
     Friend WithEvents BS_Searchfight As System.Windows.Forms.Button
     Friend WithEvents Stng_ShowLicense As System.Windows.Forms.Button
+    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents stng_simpleworld As System.Windows.Forms.Button
+    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents stng_github As System.Windows.Forms.Button
+    Friend WithEvents Label10 As System.Windows.Forms.Label
+    Friend WithEvents LineShape2 As Microsoft.VisualBasic.PowerPacks.LineShape
 
 End Class
