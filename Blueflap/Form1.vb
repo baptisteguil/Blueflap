@@ -259,13 +259,18 @@
     End Sub
 
     Private Sub ToolStripMenuItem5_Click(sender As Object, e As EventArgs) Handles Menu_Home.Click
-        If Stng_HomePage_Url.Text.Contains("http://") Then
-            Web.Source = New Uri(Stng_HomePage_Url.Text)
-        ElseIf Stng_HomePage_Url.Text.Contains("https://") Then
-            Web.Source = New Uri(Stng_HomePage_Url.Text)
+        If Stng_bluestart_checkbox.Checked = True Then
+            Bluestart.Visible = True
+            Bluestart.BringToFront()
         Else
-            Web.Source = New Uri("http://google.fr")
-            MessageBox.Show("La page d'accueil définie dans les paramètres n'est pas valide")
+            If Stng_HomePage_Url.Text.Contains("http://") Then
+                Web.Source = New Uri(Stng_HomePage_Url.Text)
+            ElseIf Stng_HomePage_Url.Text.Contains("https://") Then
+                Web.Source = New Uri(Stng_HomePage_Url.Text)
+            Else
+                Web.Source = New Uri("http://google.fr")
+                MessageBox.Show("La page d'accueil définie dans les paramètres n'est pas valide")
+            End If
         End If
     End Sub
 
