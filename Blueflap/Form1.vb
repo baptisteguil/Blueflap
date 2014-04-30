@@ -1,30 +1,30 @@
-﻿Public Class Form1
+﻿Public Class Fenetre_Principale
     Dim drag As Boolean
     Dim mousex As Integer
     Dim mousey As Integer
-    Private Sub MenuBoutton_Click(sender As Object, e As EventArgs) Handles MenuBoutton.Click
-        If volet.Width = 27 Then
-            volet.Width = 160
-            volet.BackColor = Color.White
+    Private Sub MenuBoutton_Click(sender As Object, e As EventArgs) Handles Menu_ShowHide_Button.Click
+        If voletlateral.Width = 27 Then
+            voletlateral.Width = 160
+            voletlateral.BackColor = Color.White
         Else
-            volet.Width = 27
-            volet.BackColor = Color.Black
+            voletlateral.Width = 27
+            voletlateral.BackColor = Color.Black
         End If
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim textArray = Adresse.Text.Split(" ")
-        If (Adresse.Text.Contains(".") = True And Adresse.Text.Contains(" ") = False And Adresse.Text.Contains(" .") = False And Adresse.Text.Contains(". ") = False) Or textArray(0).Contains(":/") = True Or textArray(0).Contains(":\") Then
-            If Adresse.Text.Contains("http://") Or Adresse.Text.Contains("https://") Then
-                Web.Source = New Uri(Adresse.Text)
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles GoButton.Click
+        Dim textArray = SmartAdressbox.Text.Split(" ")
+        If (SmartAdressbox.Text.Contains(".") = True And SmartAdressbox.Text.Contains(" ") = False And SmartAdressbox.Text.Contains(" .") = False And SmartAdressbox.Text.Contains(". ") = False) Or textArray(0).Contains(":/") = True Or textArray(0).Contains(":\") Then
+            If SmartAdressbox.Text.Contains("http://") Or SmartAdressbox.Text.Contains("https://") Then
+                Web.Source = New Uri(SmartAdressbox.Text)
             Else
-                Web.Source = New Uri("http://" + Adresse.Text)
+                Web.Source = New Uri("http://" + SmartAdressbox.Text)
             End If
         Else
-            If Moteur.Text.Contains("http://") Then
-                Web.Source = New Uri(Moteur.Text + Adresse.Text)
-            ElseIf Moteur.Text.Contains("https://") Then
-                Web.Source = New Uri(Moteur.Text + Adresse.Text)
+            If Stng_MoteurRecherche_URL.Text.Contains("http://") Then
+                Web.Source = New Uri(Stng_MoteurRecherche_URL.Text + SmartAdressbox.Text)
+            ElseIf Stng_MoteurRecherche_URL.Text.Contains("https://") Then
+                Web.Source = New Uri(Stng_MoteurRecherche_URL.Text + SmartAdressbox.Text)
             Else
                 MessageBox.Show("Veuillez vérifier les paramètres du moteur de recherche")
             End If
@@ -33,113 +33,113 @@
 
     End Sub
 
-    Private Sub ToolStripMenuItem3_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem3.Click
+    Private Sub ToolStripMenuItem3_Click(sender As Object, e As EventArgs) Handles Menu_Settings.Click
         Settings.BringToFront()
-        If TextBox3.Text = TextBox2.Text Then
-            TextBox2.Enabled = True
-        ElseIf TextBox2.Text = "" Then
-            TextBox2.Enabled = True
+        If Stng_MP_confirm.Text = Stng_MP.Text Then
+            Stng_MP.Enabled = True
+        ElseIf Stng_MP.Text = "" Then
+            Stng_MP.Enabled = True
         Else
-            TextBox2.Enabled = False
+            Stng_MP.Enabled = False
         End If
     End Sub
 
-    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Settings_Back.Click
         Navigateur.BringToFront()
 
-        If a.Checked = True Then
-            Homee.Visible = True
+        If Home_checkbox.Checked = True Then
+            Menu_Home.Visible = True
         Else
-            Homee.Visible = False
+            Menu_Home.Visible = False
         End If
-        If b.Checked = True Then
-            Fighty.Visible = True
+        If Sfight_Checkbox.Checked = True Then
+            Menu_Fight.Visible = True
         Else
-            Fighty.Visible = False
+            Menu_Fight.Visible = False
         End If
-        If c.Checked = True Then
-            Favos.Visible = True
+        If favo_checkbox.Checked = True Then
+            Menu_Favos.Visible = True
         Else
-            Favos.Visible = False
+            Menu_Favos.Visible = False
         End If
-        If d.Checked = True Then
-            Infoss.Visible = True
+        If share_checkbox.Checked = True Then
+            Menu_Share.Visible = True
         Else
-            Infoss.Visible = False
+            Menu_Share.Visible = False
         End If
-        If el.Checked = True Then
-            Locky.Visible = True
+        If lock_checkbox.Checked = True Then
+            Menu_Lock.Visible = True
         Else
-            Locky.Visible = False
+            Menu_Lock.Visible = False
         End If
-        If f.Checked = True Then
-            FullScr.Visible = True
+        If fullscreen_checkbox.Checked = True Then
+            Menu_FullScr.Visible = True
         Else
-            FullScr.Visible = False
+            Menu_FullScr.Visible = False
         End If
-        If CheckBox3.Visible = False Then
-            CheckBox3.Checked = False
+        If Stng_Volet_Mousehover_agrandir.Visible = False Then
+            Stng_Volet_Mousehover_agrandir.Checked = False
         End If
     End Sub
 
-    Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles label1.SelectedIndexChanged
-        If label1.Text = "Google" Then
-            Moteur.Text = "http://www.google.fr/#hl=fr&sclient=psy-ab&q="
-        ElseIf label1.Text = "Bing" Then
-            Moteur.Text = "http://www.bing.com/search?q="
+    Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Stng_MoteurRecherche_choose.SelectedIndexChanged
+        If Stng_MoteurRecherche_choose.Text = "Google" Then
+            Stng_MoteurRecherche_URL.Text = "http://www.google.fr/#hl=fr&sclient=psy-ab&q="
+        ElseIf Stng_MoteurRecherche_choose.Text = "Bing" Then
+            Stng_MoteurRecherche_URL.Text = "http://www.bing.com/search?q="
 
-        ElseIf label1.Text = "Yahoo" Then
-            Moteur.Text = "http://fr.search.yahoo.com/search;_ylt=Ai38ykBDWJSAxF25NrTnjXxNhJp4?p="
+        ElseIf Stng_MoteurRecherche_choose.Text = "Yahoo" Then
+            Stng_MoteurRecherche_URL.Text = "http://fr.search.yahoo.com/search;_ylt=Ai38ykBDWJSAxF25NrTnjXxNhJp4?p="
 
-        ElseIf label1.Text = "Youtube" Then
-            Moteur.Text = "http://www.youtube.com/results?search_query="
+        ElseIf Stng_MoteurRecherche_choose.Text = "Youtube" Then
+            Stng_MoteurRecherche_URL.Text = "http://www.youtube.com/results?search_query="
 
-        ElseIf label1.Text = "DuckDuckGo" Then
-            Moteur.Text = "http://duckduckgo.com/?q="
+        ElseIf Stng_MoteurRecherche_choose.Text = "DuckDuckGo" Then
+            Stng_MoteurRecherche_URL.Text = "http://duckduckgo.com/?q="
 
-        ElseIf label1.Text = "Wikipedia" Then
-            Moteur.Text = "http://fr.wikipedia.org/w/index.php?search="
+        ElseIf Stng_MoteurRecherche_choose.Text = "Wikipedia" Then
+            Stng_MoteurRecherche_URL.Text = "http://fr.wikipedia.org/w/index.php?search="
         End If
     End Sub
-    Private Sub ActualiserToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles Refresha.Click
+    Private Sub ActualiserToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles Menu_Refresh.Click
         Dim ignoreCache As Boolean
         ignoreCache = ignoreCache
         Web.Reload(ignoreCache = True)
     End Sub
 
-    Private Sub ArrêterToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles Stopi.Click
+    Private Sub ArrêterToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles Menu_Stop.Click
         Web.Stop()
-        Refresha.Visible = True
-        Stopi.Visible = False
+        Menu_Refresh.Visible = True
+        Menu_Stop.Visible = False
         Loader.Visible = False
     End Sub
 
-    Private Sub PrécédentToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PrécédentToolStripMenuItem.Click
+    Private Sub PrécédentToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles Menu_Back.Click
         Web.GoBack()
     End Sub
 
-    Private Sub SuivantToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SuivantToolStripMenuItem.Click
+    Private Sub SuivantToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles Menu_Forward.Click
         Web.GoForward()
     End Sub
 
     Private Sub Awesomium_Windows_Forms_WebControl_DocumentReady(sender As Object, e As Awesomium.Core.UrlEventArgs) Handles Web.DocumentReady
-        Adresse.Text = Web.Source.ToString
-        Adresse_info.Text = Web.Source.ToString
-        If Favoris.Items.Contains(Web.Source.ToString) Then
-            Button3.BackColor = Color.Azure
+        SmartAdressbox.Text = Web.Source.ToString
+        Infos_Adresse.Text = Web.Source.ToString
+        If Fav_fav_List.Items.Contains(Web.Source.ToString) Then
+            AddFavo_Button.BackColor = Color.Azure
         Else
-            Button3.BackColor = Color.White
+            AddFavo_Button.BackColor = Color.White
         End If
 
         If Web.CanGoBack = True Then
-            PrécédentToolStripMenuItem.Enabled = True
+            Menu_Back.Enabled = True
         Else
-            PrécédentToolStripMenuItem.Enabled = False
+            Menu_Back.Enabled = False
         End If
         If Web.CanGoForward = True Then
-            SuivantToolStripMenuItem.Enabled = True
+            Menu_Forward.Enabled = True
         Else
-            SuivantToolStripMenuItem.Enabled = False
+            Menu_Forward.Enabled = False
         End If
 
         Dim isAvailable As Boolean
@@ -150,38 +150,38 @@
             Notif_internet.Visible = False
         End If
         Dim html As String = Web.ExecuteJavascriptWithResult("document.getElementsByTagName('html')[0].innerHTML")
-        code_source.Text = html
+        Infos_code_source.Text = html
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        If CheckBox1.Checked = True Then
+        If Stng_MPActiv.Checked = True Then
             Verrouillage.BringToFront()
         Else
-            If bluestart.Checked = True Then
-                Homestart.Visible = True
-                Homestart.BringToFront()
+            If Stng_bluestart_checkbox.Checked = True Then
+                Bluestart.Visible = True
+                Bluestart.BringToFront()
             Else
                 Navigateur.BringToFront()
                 Verrouillage.Visible = False
             End If
         End If
 
-        If TextBox1.Text.Contains("http://") Then
-            Web.Source = New Uri(TextBox1.Text)
-        ElseIf TextBox1.Text.Contains("https://") Then
-            Web.Source = New Uri(TextBox1.Text)
+        If Stng_HomePage_Url.Text.Contains("http://") Then
+            Web.Source = New Uri(Stng_HomePage_Url.Text)
+        ElseIf Stng_HomePage_Url.Text.Contains("https://") Then
+            Web.Source = New Uri(Stng_HomePage_Url.Text)
         Else
             Web.Source = New Uri("http://google.fr")
             MessageBox.Show("La page d'accueil définie dans les paramètres n'est pas valide")
         End If
 
-        If Volet_settings.Checked = True Then
-            volet.Width = 27
-            volet.BackColor = Color.Black
+        If Stng_Volet_reduire.Checked = True Then
+            voletlateral.Width = 27
+            voletlateral.BackColor = Color.Black
         Else
-            volet.Width = 27
-            volet.Width = 160
-            volet.BackColor = Color.White
+            voletlateral.Width = 27
+            voletlateral.Width = 160
+            voletlateral.BackColor = Color.White
         End If
 
         Dim isAvailable As Boolean
@@ -193,275 +193,275 @@
         End If
 
         For Each item As String In My.Settings.Bookmarks
-            Favoris.Items.Add(item)
+            Fav_fav_List.Items.Add(item)
         Next
         For Each item As String In My.Settings.Bookmarks
-            flop.Items.Add(item)
+            BS_Favlist.Items.Add(item)
         Next
 
         For Each item As String In My.Settings.Historique
-            Histor.Items.Add(item)
+            Fav_Historique_List.Items.Add(item)
         Next
 
-        If a.Checked = True Then
-            Homee.Visible = True
+        If Home_checkbox.Checked = True Then
+            Menu_Home.Visible = True
         Else
-            Homee.Visible = False
+            Menu_Home.Visible = False
         End If
-        If b.Checked = True Then
-            Fighty.Visible = True
+        If Sfight_Checkbox.Checked = True Then
+            Menu_Fight.Visible = True
         Else
-            Fighty.Visible = False
+            Menu_Fight.Visible = False
         End If
-        If c.Checked = True Then
-            Favos.Visible = True
+        If favo_checkbox.Checked = True Then
+            Menu_Favos.Visible = True
         Else
-            Favos.Visible = False
+            Menu_Favos.Visible = False
         End If
-        If d.Checked = True Then
-            Infoss.Visible = True
+        If share_checkbox.Checked = True Then
+            Menu_Share.Visible = True
         Else
-            Infoss.Visible = False
+            Menu_Share.Visible = False
         End If
-        If el.Checked = True Then
-            Locky.Visible = True
+        If lock_checkbox.Checked = True Then
+            Menu_Lock.Visible = True
         Else
-            Locky.Visible = False
+            Menu_Lock.Visible = False
         End If
-        If f.Checked = True Then
-            FullScr.Visible = True
+        If fullscreen_checkbox.Checked = True Then
+            Menu_FullScr.Visible = True
         Else
-            FullScr.Visible = False
+            Menu_FullScr.Visible = False
         End If
         Label14.Left = (Me.Width - Label14.Width) / 2
-        loll.Text = System.DateTime.Now.ToString("dddd dd MMMM yyyy")
-        loll.Left = (Me.Width - loll.Width) / 2
-        Panel4.Left = (Me.Width - Panel4.Width) / 2
-        Timess.Text = System.DateTime.Now.ToString("HH:mm")
-        Dates.Text = System.DateTime.Now.ToString("dddd dd MMMM yyyy")
-        If Not Homestart.Tag = "" Then
-            If System.IO.File.Exists(Homestart.Tag) Then
-                Dim fileeName As String = System.IO.Path.GetFullPath(Homestart.Tag)
-                Homestart.BackgroundImage = Image.FromFile(Homestart.Tag)
-                Verrouillage.BackgroundImage = Image.FromFile(Homestart.Tag)
+        BS_Date.Text = System.DateTime.Now.ToString("dddd dd MMMM yyyy")
+        BS_Date.Left = (Me.Width - BS_Date.Width) / 2
+        Verr_BlackEffect.Left = (Me.Width - Verr_BlackEffect.Width) / 2
+        Verr_Time.Text = System.DateTime.Now.ToString("HH:mm")
+        Verr_Date.Text = System.DateTime.Now.ToString("dddd dd MMMM yyyy")
+        If Not Bluestart.Tag = "" Then
+            If System.IO.File.Exists(Bluestart.Tag) Then
+                Dim fileeName As String = System.IO.Path.GetFullPath(Bluestart.Tag)
+                Bluestart.BackgroundImage = Image.FromFile(Bluestart.Tag)
+                Verrouillage.BackgroundImage = Image.FromFile(Bluestart.Tag)
             End If
         End If
     End Sub
 
-    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
-        If TextBox1.Text.Contains("http://") Then
-            Erreur.Visible = False
-        ElseIf TextBox1.Text.Contains("https://") Then
-            Erreur.Visible = False
+    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles Stng_HomePage_Url.TextChanged
+        If Stng_HomePage_Url.Text.Contains("http://") Then
+            Stng_ErreurURLHomepage.Visible = False
+        ElseIf Stng_HomePage_Url.Text.Contains("https://") Then
+            Stng_ErreurURLHomepage.Visible = False
         Else
-            Erreur.Visible = True
+            Stng_ErreurURLHomepage.Visible = True
         End If
     End Sub
 
-    Private Sub ToolStripMenuItem5_Click(sender As Object, e As EventArgs) Handles Homee.Click
-        If TextBox1.Text.Contains("http://") Then
-            Web.Source = New Uri(TextBox1.Text)
-        ElseIf TextBox1.Text.Contains("https://") Then
-            Web.Source = New Uri(TextBox1.Text)
+    Private Sub ToolStripMenuItem5_Click(sender As Object, e As EventArgs) Handles Menu_Home.Click
+        If Stng_HomePage_Url.Text.Contains("http://") Then
+            Web.Source = New Uri(Stng_HomePage_Url.Text)
+        ElseIf Stng_HomePage_Url.Text.Contains("https://") Then
+            Web.Source = New Uri(Stng_HomePage_Url.Text)
         Else
             Web.Source = New Uri("http://google.fr")
             MessageBox.Show("La page d'accueil définie dans les paramètres n'est pas valide")
         End If
     End Sub
 
-    Private Sub Volet_settings_CheckedChanged(sender As Object, e As EventArgs) Handles Volet_settings.CheckedChanged
-        If Volet_settings.Checked = True Then
-            volet.Width = 27
-            volet.BackColor = Color.Black
-            CheckBox3.Visible = True
+    Private Sub Volet_settings_CheckedChanged(sender As Object, e As EventArgs) Handles Stng_Volet_reduire.CheckedChanged
+        If Stng_Volet_reduire.Checked = True Then
+            voletlateral.Width = 27
+            voletlateral.BackColor = Color.Black
+            Stng_Volet_Mousehover_agrandir.Visible = True
         Else
-            volet.Width = 27
-            volet.Width = 160
-            volet.BackColor = Color.White
-            volet.SendToBack()
-            CheckBox3.Visible = False
+            voletlateral.Width = 27
+            voletlateral.Width = 160
+            voletlateral.BackColor = Color.White
+            voletlateral.SendToBack()
+            Stng_Volet_Mousehover_agrandir.Visible = False
         End If
     End Sub
 
-    Private Sub FullScreenToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FullScr.Click
+    Private Sub FullScreenToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles Menu_FullScr.Click
         If Me.FormBorderStyle = Windows.Forms.FormBorderStyle.Sizable Then
             Me.FormBorderStyle = Windows.Forms.FormBorderStyle.None
             Me.WindowState = FormWindowState.Normal
             Me.WindowState = FormWindowState.Maximized
-            FullScr.Text = "Mode fenêtre"
+            Menu_FullScr.Text = "Mode fenêtre"
         Else
             Me.FormBorderStyle = Windows.Forms.FormBorderStyle.Sizable
             Me.WindowState = FormWindowState.Normal
-            FullScr.Text = "Plein écran"
+            Menu_FullScr.Text = "Plein écran"
         End If
     End Sub
 
-    Private Sub TextBox3_TextChanged(sender As Object, e As EventArgs) Handles TextBox3.TextChanged
-        If TextBox3.Text = TextBox2.Text Then
-            CheckBox1.Enabled = True
-            TextBox2.Enabled = True
-            TextBox3.ForeColor = Color.Green
+    Private Sub TextBox3_TextChanged(sender As Object, e As EventArgs) Handles Stng_MP_confirm.TextChanged
+        If Stng_MP_confirm.Text = Stng_MP.Text Then
+            Stng_MPActiv.Enabled = True
+            Stng_MP.Enabled = True
+            Stng_MP_confirm.ForeColor = Color.Green
         Else
-            CheckBox1.Enabled = False
-            TextBox2.Enabled = False
-            TextBox3.ForeColor = Color.Red
+            Stng_MPActiv.Enabled = False
+            Stng_MP.Enabled = False
+            Stng_MP_confirm.ForeColor = Color.Red
         End If
     End Sub
 
-    Private Sub ToolStripMenuItem8_Click(sender As Object, e As EventArgs) Handles Locky.Click
+    Private Sub ToolStripMenuItem8_Click(sender As Object, e As EventArgs) Handles Menu_Lock.Click
         Form2.Show()
     End Sub
 
-    Private Sub ToolStripMenuItem4_Click(sender As Object, e As EventArgs) Handles Infoss.Click
-        Page.BringToFront()
-        Infoload.Navigate(Web.Source)
+    Private Sub ToolStripMenuItem4_Click(sender As Object, e As EventArgs) Handles Menu_Share.Click
+        Infos.BringToFront()
+        Infos_Trident_Browser_Recup_Infos.Navigate(Web.Source)
     End Sub
 
-    Private Sub Back_info_Click(sender As Object, e As EventArgs) Handles Back_info.Click
+    Private Sub Back_info_Click(sender As Object, e As EventArgs) Handles Infos_back.Click
         Navigateur.BringToFront()
-        Infoload.Navigate("about:blank")
+        Infos_Trident_Browser_Recup_Infos.Navigate("about:blank")
     End Sub
 
-    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
-        If TextBox4.Text = TextBox2.Text Then
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Verr_AcceptButt.Click
+        If Verr_Textbox.Text = Stng_MP.Text Then
             Navigateur.BringToFront()
             Verrouillage.Visible = False
         Else
-            WrongMp.Visible = True
+            Verr_WrongMp.Visible = True
         End If
 
     End Sub
-    Private Sub CheckBox3_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox3.CheckedChanged
-        If CheckBox3.Checked = True Then
-            volet.BringToFront()
+    Private Sub CheckBox3_CheckedChanged(sender As Object, e As EventArgs) Handles Stng_Volet_Mousehover_agrandir.CheckedChanged
+        If Stng_Volet_Mousehover_agrandir.Checked = True Then
+            voletlateral.BringToFront()
         Else
-            volet.SendToBack()
+            voletlateral.SendToBack()
         End If
     End Sub
-    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
+    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles SrchF_Back.Click
         Navigateur.BringToFront()
     End Sub
 
-    Private Sub ToolStripMenuItem6_Click(sender As Object, e As EventArgs) Handles Fighty.Click
+    Private Sub ToolStripMenuItem6_Click(sender As Object, e As EventArgs) Handles Menu_Fight.Click
         Fight.BringToFront()
     End Sub
 
-    Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
-        If ComboBox1.Text = "Google" Then
-            fighter_1.Source = New Uri("http://www.google.fr/#hl=fr&sclient=psy-ab&q=" + TextBox5.Text)
+    Private Sub Button8_Click(sender As Object, e As EventArgs) Handles SrchF_Fightbutton.Click
+        If SrchF_ChoixA.Text = "Google" Then
+            SrchF_fighter_1.Source = New Uri("http://www.google.fr/#hl=fr&sclient=psy-ab&q=" + SrchF_Searchbox.Text)
 
-        ElseIf ComboBox1.Text = "Bing" Then
-            fighter_1.Source = New Uri("http://www.bing.com/search?q=" + TextBox5.Text)
+        ElseIf SrchF_ChoixA.Text = "Bing" Then
+            SrchF_fighter_1.Source = New Uri("http://www.bing.com/search?q=" + SrchF_Searchbox.Text)
 
-        ElseIf ComboBox1.Text = "Yahoo" Then
-            fighter_1.Source = New Uri("http://fr.search.yahoo.com/search;_ylt=Ai38ykBDWJSAxF25NrTnjXxNhJp4?p=" + TextBox5.Text)
+        ElseIf SrchF_ChoixA.Text = "Yahoo" Then
+            SrchF_fighter_1.Source = New Uri("http://fr.search.yahoo.com/search;_ylt=Ai38ykBDWJSAxF25NrTnjXxNhJp4?p=" + SrchF_Searchbox.Text)
 
-        ElseIf ComboBox1.Text = "DuckDuckGo" Then
-            fighter_1.Source = New Uri("http://duckduckgo.com/?q=" + TextBox5.Text)
+        ElseIf SrchF_ChoixA.Text = "DuckDuckGo" Then
+            SrchF_fighter_1.Source = New Uri("http://duckduckgo.com/?q=" + SrchF_Searchbox.Text)
         End If
 
 
-        If ComboBox2.Text = "Google" Then
-            fighter_2.Source = New Uri("http://www.google.fr/#hl=fr&sclient=psy-ab&q=" + TextBox5.Text)
+        If SrchF_ChoixB.Text = "Google" Then
+            SrchF_fighter_2.Source = New Uri("http://www.google.fr/#hl=fr&sclient=psy-ab&q=" + SrchF_Searchbox.Text)
 
-        ElseIf ComboBox2.Text = "Bing" Then
-            fighter_2.Source = New Uri("http://www.bing.com/search?q=" + TextBox5.Text)
+        ElseIf SrchF_ChoixB.Text = "Bing" Then
+            SrchF_fighter_2.Source = New Uri("http://www.bing.com/search?q=" + SrchF_Searchbox.Text)
 
-        ElseIf ComboBox2.Text = "Yahoo" Then
-            fighter_2.Source = New Uri("http://fr.search.yahoo.com/search;_ylt=Ai38ykBDWJSAxF25NrTnjXxNhJp4?p=" + TextBox5.Text)
+        ElseIf SrchF_ChoixB.Text = "Yahoo" Then
+            SrchF_fighter_2.Source = New Uri("http://fr.search.yahoo.com/search;_ylt=Ai38ykBDWJSAxF25NrTnjXxNhJp4?p=" + SrchF_Searchbox.Text)
 
-        ElseIf ComboBox2.Text = "DuckDuckGo" Then
-            fighter_2.Source = New Uri("http://duckduckgo.com/?q=" + TextBox5.Text)
+        ElseIf SrchF_ChoixB.Text = "DuckDuckGo" Then
+            SrchF_fighter_2.Source = New Uri("http://duckduckgo.com/?q=" + SrchF_Searchbox.Text)
 
         End If
     End Sub
 
-    Private Sub TextBox5_TextChanged(sender As Object, e As EventArgs) Handles TextBox5.TextChanged
-        Me.AcceptButton = Button8
+    Private Sub TextBox5_TextChanged(sender As Object, e As EventArgs) Handles SrchF_Searchbox.TextChanged
+        Me.AcceptButton = SrchF_Fightbutton
     End Sub
-    Private Sub TextBox5_Leave(sender As Object, e As EventArgs) Handles TextBox5.Leave
-        Me.AcceptButton = Button1
+    Private Sub TextBox5_Leave(sender As Object, e As EventArgs) Handles SrchF_Searchbox.Leave
+        Me.AcceptButton = GoButton
     End Sub
     Private Sub Recherche_Leave(sender As Object, e As EventArgs)
-        Me.AcceptButton = Button1
+        Me.AcceptButton = GoButton
     End Sub
 
-    Private Sub TextBox4_TextChanged(sender As Object, e As EventArgs) Handles TextBox4.TextChanged
-        Me.AcceptButton = Button6
-        WrongMp.Visible = False
+    Private Sub TextBox4_TextChanged(sender As Object, e As EventArgs) Handles Verr_Textbox.TextChanged
+        Me.AcceptButton = Verr_AcceptButt
+        Verr_WrongMp.Visible = False
     End Sub
-    Private Sub TextBox4_Leave(sender As Object, e As EventArgs) Handles TextBox4.Leave
-        Me.AcceptButton = Button1
+    Private Sub TextBox4_Leave(sender As Object, e As EventArgs) Handles Verr_Textbox.Leave
+        Me.AcceptButton = GoButton
     End Sub
 
-    Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Code_info.Click
-        If code_source.Visible = False Then
-            code_source.Visible = True
+    Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Infos_CodeShowHide.Click
+        If Infos_code_source.Visible = False Then
+            Infos_code_source.Visible = True
         Else
-            code_source.Visible = False
+            Infos_code_source.Visible = False
         End If
     End Sub
 
-    Private Sub WebBrowser1_DocumentCompleted(sender As Object, e As WebBrowserDocumentCompletedEventArgs) Handles Infoload.DocumentCompleted
-        obtload.Visible = False
-        obtlabel.Visible = False
-        Save.Visible = True
-        Print.Visible = True
+    Private Sub WebBrowser1_DocumentCompleted(sender As Object, e As WebBrowserDocumentCompletedEventArgs) Handles Infos_Trident_Browser_Recup_Infos.DocumentCompleted
+        Infos_Loader.Visible = False
+        Infos_Loading.Visible = False
+        Infos_Save.Visible = True
+        Infos_Print.Visible = True
     End Sub
-    Private Sub Infoload_Navigating(sender As Object, e As WebBrowserNavigatingEventArgs) Handles Infoload.Navigating
-        obtload.Visible = True
-        obtlabel.Visible = True
-        Save.Visible = False
-        Print.Visible = False
-    End Sub
-
-    Private Sub Print_Click(sender As Object, e As EventArgs) Handles Print.Click
-        Infoload.ShowPrintPreviewDialog()
+    Private Sub Infoload_Navigating(sender As Object, e As WebBrowserNavigatingEventArgs) Handles Infos_Trident_Browser_Recup_Infos.Navigating
+        Infos_Loader.Visible = True
+        Infos_Loading.Visible = True
+        Infos_Save.Visible = False
+        Infos_Print.Visible = False
     End Sub
 
-    Private Sub Save_Click(sender As Object, e As EventArgs) Handles Save.Click
-        Infoload.ShowSaveAsDialog()
+    Private Sub Print_Click(sender As Object, e As EventArgs) Handles Infos_Print.Click
+        Infos_Trident_Browser_Recup_Infos.ShowPrintPreviewDialog()
     End Sub
 
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+    Private Sub Save_Click(sender As Object, e As EventArgs) Handles Infos_Save.Click
+        Infos_Trident_Browser_Recup_Infos.ShowSaveAsDialog()
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles AddFavo_Button.Click
         Notif_add.Visible = True
-        If Favoris.Items.Contains(Web.Source.ToString) Then
+        If Fav_fav_List.Items.Contains(Web.Source.ToString) Then
             Textenotif.Text = "Page déjà dans vos favoris"
         Else
             My.Settings.Bookmarks.Add(Web.Source.ToString)
-            Favoris.Items.Clear()
+            Fav_fav_List.Items.Clear()
             For Each Item As String In My.Settings.Bookmarks
-                Favoris.Items.Add(Item)
+                Fav_fav_List.Items.Add(Item)
             Next
-            Button3.BackColor = Color.Azure
+            AddFavo_Button.BackColor = Color.Azure
             Textenotif.Text = "Page ajoutée aux favoris"
         End If
     End Sub
 
-    Private Sub Favoris_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Favoris.Click
-        If Favoris.SelectedItem = "" Then
+    Private Sub Favoris_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Fav_fav_List.Click
+        If Fav_fav_List.SelectedItem = "" Then
         Else
-            Web.Source = New Uri(Favoris.SelectedItem)
+            Web.Source = New Uri(Fav_fav_List.SelectedItem)
         End If
     End Sub
-    Private Sub Favoris_Norif(sender As Object, e As EventArgs) Handles Favoris.DoubleClick
-        notif_suppr.Visible = True
+    Private Sub Favoris_Norif(sender As Object, e As EventArgs) Handles Fav_fav_List.DoubleClick
+        fav_notif_suppr.Visible = True
     End Sub
 
-    Private Sub Button10_Click(sender As Object, e As EventArgs) Handles Button10.Click
-        notif_suppr.Visible = False
+    Private Sub Button10_Click(sender As Object, e As EventArgs) Handles Fav_Cancel.Click
+        fav_notif_suppr.Visible = False
     End Sub
 
-    Private Sub Button9_Click_1(sender As Object, e As EventArgs) Handles Button9.Click
-        My.Settings.Bookmarks.Remove(Favoris.SelectedItem)
-        Favoris.Items.Clear()
+    Private Sub Button9_Click_1(sender As Object, e As EventArgs) Handles Fav_Confirm.Click
+        My.Settings.Bookmarks.Remove(Fav_fav_List.SelectedItem)
+        Fav_fav_List.Items.Clear()
         For Each Item As String In My.Settings.Bookmarks
-            Favoris.Items.Add(Item)
+            Fav_fav_List.Items.Add(Item)
         Next
-        notif_suppr.Visible = False
+        fav_notif_suppr.Visible = False
     End Sub
 
-    Private Sub ToolStripMenuItem9_Click(sender As Object, e As EventArgs) Handles Favos.Click
+    Private Sub ToolStripMenuItem9_Click(sender As Object, e As EventArgs) Handles Menu_Favos.Click
         If Panel1.Visible = True Then
             Panel1.Visible = False
         Else
@@ -474,31 +474,31 @@
         Notif_add.Visible = False
     End Sub
 
-    Private Sub Button11_Click(sender As Object, e As EventArgs) Handles Button11.Click
+    Private Sub Button11_Click(sender As Object, e As EventArgs) Handles Notiff_add_OKbutton.Click
         Notif_add.Visible = False
     End Sub
 
-    Private Sub Button12_Click(sender As Object, e As EventArgs) Handles Button12.Click
+    Private Sub Button12_Click(sender As Object, e As EventArgs) Handles Fav_Close.Click
         Panel1.Visible = False
     End Sub
     Private Sub Awesomium_Windows_Forms_WebControl_Navig(sender As Object, e As Awesomium.Core.UrlEventArgs) Handles Web.LoadingFrame
-        Stopi.Visible = True
+        Menu_Stop.Visible = True
         Loader.Visible = True
-        Refresha.Visible = False
+        Menu_Refresh.Visible = False
     End Sub
 
     Private Sub Awesomium_Windows_Forms_WebControl_LoadingFrameComplete(sender As Object, e As Awesomium.Core.FrameEventArgs) Handles Web.LoadingFrameComplete
-        Stopi.Visible = False
+        Menu_Stop.Visible = False
         Loader.Visible = False
-        Refresha.Visible = True
-        Titre_info.Text = Web.Title
+        Menu_Refresh.Visible = True
+        Infos_Titre.Text = Web.Title
 
-        If Histor.Items.Contains(Adresse.Text) Then
+        If Fav_Historique_List.Items.Contains(SmartAdressbox.Text) Then
         Else
-            My.Settings.Historique.Add(Adresse.Text)
-            Histor.Items.Clear()
+            My.Settings.Historique.Add(SmartAdressbox.Text)
+            Fav_Historique_List.Items.Clear()
             For Each Item As String In My.Settings.Historique
-                Histor.Items.Add(Item)
+                Fav_Historique_List.Items.Add(Item)
             Next
         End If
 
@@ -511,84 +511,84 @@
     Private Sub Button13_Click(sender As Object, e As EventArgs)
         Process.Start("inetcpl.cpl")
     End Sub
-    Private Sub Button13_Click_1(sender As Object, e As EventArgs) Handles Button13.Click
+    Private Sub Button13_Click_1(sender As Object, e As EventArgs) Handles Stng_OptionsInternet.Click
         Process.Start("inetcpl.cpl")
     End Sub
 
-    Private Sub CheckBox2_CheckedChanged(sender As Object, e As EventArgs) Handles Touchkeyb.CheckedChanged
-        If Touchkeyb.Checked = True Then
+    Private Sub CheckBox2_CheckedChanged(sender As Object, e As EventArgs) Handles Stng_TouchUI.CheckedChanged
+        If Stng_TouchUI.Checked = True Then
             Form3.Show()
-            Homee.Font = New Font("Segoe UI Light", 16)
-            PrécédentToolStripMenuItem.Font = New Font("Segoe UI Light", 16)
-            SuivantToolStripMenuItem.Font = New Font("Segoe UI Light", 16)
-            Stopi.Font = New Font("Segoe UI Light", 16)
-            Refresha.Font = New Font("Segoe UI Light", 16)
-            Fighty.Font = New Font("Segoe UI Light", 16)
-            ToolStripMenuItem3.Font = New Font("Segoe UI Light", 16)
-            Infoss.Font = New Font("Segoe UI Light", 16)
-            Favos.Font = New Font("Segoe UI Light", 16)
-            Locky.Font = New Font("Segoe UI Light", 16)
-            FullScr.Font = New Font("Segoe UI Light", 16)
-            Adresse.Font = New Font("Segoe UI Light", 13)
+            Menu_Home.Font = New Font("Segoe UI Light", 16)
+            Menu_Back.Font = New Font("Segoe UI Light", 16)
+            Menu_Forward.Font = New Font("Segoe UI Light", 16)
+            Menu_Stop.Font = New Font("Segoe UI Light", 16)
+            Menu_Refresh.Font = New Font("Segoe UI Light", 16)
+            Menu_Fight.Font = New Font("Segoe UI Light", 16)
+            Menu_Settings.Font = New Font("Segoe UI Light", 16)
+            Menu_Share.Font = New Font("Segoe UI Light", 16)
+            Menu_Favos.Font = New Font("Segoe UI Light", 16)
+            Menu_Lock.Font = New Font("Segoe UI Light", 16)
+            Menu_FullScr.Font = New Font("Segoe UI Light", 16)
+            SmartAdressbox.Font = New Font("Segoe UI Light", 13)
             Barre.Height = 40
-            Button3.Height = 31
-            Button1.Height = 29
-            MenuBoutton.Height = 38
+            AddFavo_Button.Height = 31
+            GoButton.Height = 29
+            Menu_ShowHide_Button.Height = 38
         Else
             Form3.Close()
-            Homee.Font = New Font("Segoe UI Light", 11)
-            PrécédentToolStripMenuItem.Font = New Font("Segoe UI Light", 11)
-            SuivantToolStripMenuItem.Font = New Font("Segoe UI Light", 11)
-            Stopi.Font = New Font("Segoe UI Light", 11)
-            Refresha.Font = New Font("Segoe UI Light", 11)
-            Fighty.Font = New Font("Segoe UI Light", 11)
-            ToolStripMenuItem3.Font = New Font("Segoe UI Light", 11)
-            Infoss.Font = New Font("Segoe UI Light", 11)
-            Favos.Font = New Font("Segoe UI Light", 11)
-            Locky.Font = New Font("Segoe UI Light", 11)
-            FullScr.Font = New Font("Segoe UI Light", 11)
-            Adresse.Font = New Font("Microsoft Sans Serif", 8)
+            Menu_Home.Font = New Font("Segoe UI Light", 11)
+            Menu_Back.Font = New Font("Segoe UI Light", 11)
+            Menu_Forward.Font = New Font("Segoe UI Light", 11)
+            Menu_Stop.Font = New Font("Segoe UI Light", 11)
+            Menu_Refresh.Font = New Font("Segoe UI Light", 11)
+            Menu_Fight.Font = New Font("Segoe UI Light", 11)
+            Menu_Settings.Font = New Font("Segoe UI Light", 11)
+            Menu_Share.Font = New Font("Segoe UI Light", 11)
+            Menu_Favos.Font = New Font("Segoe UI Light", 11)
+            Menu_Lock.Font = New Font("Segoe UI Light", 11)
+            Menu_FullScr.Font = New Font("Segoe UI Light", 11)
+            SmartAdressbox.Font = New Font("Microsoft Sans Serif", 8)
             Barre.Height = 27
-            Button3.Height = 20
-            Button1.Height = 18
-            MenuBoutton.Height = 27
+            AddFavo_Button.Height = 20
+            GoButton.Height = 18
+            Menu_ShowHide_Button.Height = 27
         End If
     End Sub
 
     Private Sub Verrouillage_MouseMove(sender As Object, e As MouseEventArgs) Handles Verrouillage.MouseMove
-        Timess.Text = System.DateTime.Now.ToString("HH:mm")
-        Dates.Text = System.DateTime.Now.ToString("dddd dd MMMM yyyy")
+        Verr_Time.Text = System.DateTime.Now.ToString("HH:mm")
+        Verr_Date.Text = System.DateTime.Now.ToString("dddd dd MMMM yyyy")
     End Sub
 
-    Private Sub Label15_Click(sender As Object, e As EventArgs) Handles Label15.Click
-        Histor.Visible = True
-        Label15.Location = New Point(76, 4)
-        Label15.Font = New Font("Segoe UI Light", 16)
-        Label15.ForeColor = Color.DeepSkyBlue
-        Favs.Location = New Point(10, 6)
-        Favs.Font = New Font("Segoe UI Light", 14)
-        Favs.ForeColor = Color.Gray
+    Private Sub Label15_Click(sender As Object, e As EventArgs) Handles fav_Historique.Click
+        Fav_Historique_List.Visible = True
+        fav_Historique.Location = New Point(76, 4)
+        fav_Historique.Font = New Font("Segoe UI Light", 16)
+        fav_Historique.ForeColor = Color.DeepSkyBlue
+        Fav_Favoris.Location = New Point(10, 6)
+        Fav_Favoris.Font = New Font("Segoe UI Light", 14)
+        Fav_Favoris.ForeColor = Color.Gray
     End Sub
 
-    Private Sub Favs_Click(sender As Object, e As EventArgs) Handles Favs.Click
-        Histor.Visible = False
-        Label15.Location = New Point(76, 7)
-        Label15.Font = New Font("Segoe UI Light", 14)
-        Label15.ForeColor = Color.Gray
-        Favs.Location = New Point(3, 3)
-        Favs.Font = New Font("Segoe UI Light", 16)
-        Favs.ForeColor = Color.DeepSkyBlue
+    Private Sub Favs_Click(sender As Object, e As EventArgs) Handles Fav_Favoris.Click
+        Fav_Historique_List.Visible = False
+        fav_Historique.Location = New Point(76, 7)
+        fav_Historique.Font = New Font("Segoe UI Light", 14)
+        fav_Historique.ForeColor = Color.Gray
+        Fav_Favoris.Location = New Point(3, 3)
+        Fav_Favoris.Font = New Font("Segoe UI Light", 16)
+        Fav_Favoris.ForeColor = Color.DeepSkyBlue
     End Sub
 
-    Private Sub Button14_Click(sender As Object, e As EventArgs) Handles Button14.Click
+    Private Sub Button14_Click(sender As Object, e As EventArgs) Handles Stng_SupprHisto.Click
         My.Settings.Historique.Clear()
-        Histor.Items.Clear()
+        Fav_Historique_List.Items.Clear()
     End Sub
 
-    Private Sub Histor_Click(sender As Object, e As EventArgs) Handles Histor.Click
-        If Histor.SelectedItem = "" Then
+    Private Sub Histor_Click(sender As Object, e As EventArgs) Handles Fav_Historique_List.Click
+        If Fav_Historique_List.SelectedItem = "" Then
         Else
-            Web.Source = New Uri(Histor.SelectedItem)
+            Web.Source = New Uri(Fav_Historique_List.SelectedItem)
         End If
     End Sub
 
@@ -596,63 +596,63 @@
         Web.Source = e.TargetURL
     End Sub
 
-    Private Sub Awesomium_Windows_Forms_WebControl_ShowCreatedWebView_1(sender As Object, e As Awesomium.Core.ShowCreatedWebViewEventArgs) Handles fighter_1.ShowCreatedWebView
-        fighter_1.Source = e.TargetURL
+    Private Sub Awesomium_Windows_Forms_WebControl_ShowCreatedWebView_1(sender As Object, e As Awesomium.Core.ShowCreatedWebViewEventArgs) Handles SrchF_fighter_1.ShowCreatedWebView
+        SrchF_fighter_1.Source = e.TargetURL
     End Sub
-    Private Sub Awesomium_Windows_Forms_WebControl_ShowCreatedWebView_2(sender As Object, e As Awesomium.Core.ShowCreatedWebViewEventArgs) Handles fighter_2.ShowCreatedWebView
-        fighter_2.Source = e.TargetURL
+    Private Sub Awesomium_Windows_Forms_WebControl_ShowCreatedWebView_2(sender As Object, e As Awesomium.Core.ShowCreatedWebViewEventArgs) Handles SrchF_fighter_2.ShowCreatedWebView
+        SrchF_fighter_2.Source = e.TargetURL
     End Sub
 
-    Private Sub CheckBox2_CheckedChanged_1(sender As Object, e As EventArgs) Handles CheckBox2.CheckedChanged
-        If CheckBox2.Checked = True Then
+    Private Sub CheckBox2_CheckedChanged_1(sender As Object, e As EventArgs) Handles Stng_MaximizedWindow.CheckedChanged
+        If Stng_MaximizedWindow.Checked = True Then
             Me.WindowState = FormWindowState.Maximized
         Else
         End If
 
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Stng_SupprCacheCookies.Click
         Web.WebSession.ClearCache()
         Web.WebSession.ClearCookies()
     End Sub
 
-    Private Sub volet_MouseHover(sender As Object, e As EventArgs) Handles volet.MouseHover
-        If Volet_settings.Checked = True Then
-            If CheckBox3.Checked = True Then
-                volet.BackColor = Color.White
-                volet.Width = 160
+    Private Sub volet_MouseHover(sender As Object, e As EventArgs) Handles voletlateral.MouseHover
+        If Stng_Volet_reduire.Checked = True Then
+            If Stng_Volet_Mousehover_agrandir.Checked = True Then
+                voletlateral.BackColor = Color.White
+                voletlateral.Width = 160
             End If
         End If
 
     End Sub
 
-    Private Sub volet_MouseLeave(sender As Object, e As EventArgs) Handles volet.MouseLeave
-        If Volet_settings.Checked = True Then
-            If CheckBox3.Checked = True Then
-                volet.Width = 27
-                volet.BackColor = Color.Black
+    Private Sub volet_MouseLeave(sender As Object, e As EventArgs) Handles voletlateral.MouseLeave
+        If Stng_Volet_reduire.Checked = True Then
+            If Stng_Volet_Mousehover_agrandir.Checked = True Then
+                voletlateral.Width = 27
+                voletlateral.BackColor = Color.Black
             End If
         End If
     End Sub
 
 
     Private Sub Form1_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-        If CheckBox3.Visible = False Then
-            CheckBox3.Checked = False
+        If Stng_Volet_Mousehover_agrandir.Visible = False Then
+            Stng_Volet_Mousehover_agrandir.Checked = False
         End If
     End Sub
 
     Private Sub ToolStripMenuItem7_Click(sender As Object, e As EventArgs)
-        Homestart.BringToFront()
+        Bluestart.BringToFront()
     End Sub
 
     Private Sub Form1_Resize(sender As Object, e As EventArgs) Handles MyBase.Resize
-        loll.Left = (Me.Width - loll.Width) / 2
+        BS_Date.Left = (Me.Width - BS_Date.Width) / 2
         Label14.Left = (Me.Width - Label14.Width) / 2
-        Panel4.Left = (Me.Width - Panel4.Width) / 2
+        Verr_BlackEffect.Left = (Me.Width - Verr_BlackEffect.Width) / 2
     End Sub
 
-    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles BS_Settings.Click
         If Pop.Visible = True Then
             Pop.Visible = False
         Else
@@ -660,59 +660,59 @@
         End If
     End Sub
 
-    Private Sub TextBox6_TextChanged(sender As Object, e As EventArgs) Handles TextBox6.TextChanged
-        Me.AcceptButton = Button15
+    Private Sub TextBox6_TextChanged(sender As Object, e As EventArgs) Handles Bs_Searchbox.TextChanged
+        Me.AcceptButton = BS_Searchbutton
     End Sub
 
-    Private Sub Button15_Click(sender As Object, e As EventArgs) Handles Button15.Click
-        If Moteur.Text.Contains("http://") Then
-            Web.Source = New Uri(Moteur.Text + TextBox6.Text)
-        ElseIf Moteur.Text.Contains("https://") Then
-            Web.Source = New Uri(Moteur.Text + TextBox6.Text)
+    Private Sub Button15_Click(sender As Object, e As EventArgs) Handles BS_Searchbutton.Click
+        If Stng_MoteurRecherche_URL.Text.Contains("http://") Then
+            Web.Source = New Uri(Stng_MoteurRecherche_URL.Text + Bs_Searchbox.Text)
+        ElseIf Stng_MoteurRecherche_URL.Text.Contains("https://") Then
+            Web.Source = New Uri(Stng_MoteurRecherche_URL.Text + Bs_Searchbox.Text)
         Else
             MessageBox.Show("Veuillez vérifier les paramètres du moteur de recherche")
         End If
         Navigateur.BringToFront()
-        Homestart.Visible = False
+        Bluestart.Visible = False
     End Sub
 
-    Private Sub TextBox6_Leave(sender As Object, e As EventArgs) Handles TextBox6.Leave
-        Me.AcceptButton = Button1
+    Private Sub TextBox6_Leave(sender As Object, e As EventArgs) Handles Bs_Searchbox.Leave
+        Me.AcceptButton = GoButton
     End Sub
 
-    Private Sub Button16_Click(sender As Object, e As EventArgs) Handles Button16.Click
+    Private Sub Button16_Click(sender As Object, e As EventArgs) Handles BS_ImgChoose.Click
         Dim open As New OpenFileDialog()
         open.Filter = "Image Files(*.png; *.jpg; *.bmp)|*.png; *.jpg; *.bmp"
         If open.ShowDialog() = DialogResult.OK Then
             Dim fileName As String = System.IO.Path.GetFullPath(open.FileName)
-            Homestart.BackgroundImage = New Bitmap(open.FileName)
-            Homestart.Tag = fileName
+            Bluestart.BackgroundImage = New Bitmap(open.FileName)
+            Bluestart.Tag = fileName
         End If
     End Sub
 
-    Private Sub Button17_Click(sender As Object, e As EventArgs) Handles Button17.Click
-        If loll.ForeColor = Color.White Then
-            loll.ForeColor = Color.Black
-            Button17.Text = "Date : Claire"
+    Private Sub Button17_Click(sender As Object, e As EventArgs) Handles BS_DateSetColor.Click
+        If BS_Date.ForeColor = Color.White Then
+            BS_Date.ForeColor = Color.Black
+            BS_DateSetColor.Text = "Date : Claire"
         Else
-            loll.ForeColor = Color.White
-            Button17.Text = "Date : Sombre"
+            BS_Date.ForeColor = Color.White
+            BS_DateSetColor.Text = "Date : Sombre"
         End If
     End Sub
-    Private Sub Flop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles flop.Click
-        If flop.SelectedItem = "" Then
+    Private Sub Flop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles BS_Favlist.Click
+        If BS_Favlist.SelectedItem = "" Then
         Else
-            Web.Source = New Uri(flop.SelectedItem)
+            Web.Source = New Uri(BS_Favlist.SelectedItem)
             Navigateur.BringToFront()
-            Homestart.Visible = False
+            Bluestart.Visible = False
         End If
     End Sub
 
-    Private Sub Button18_Click(sender As Object, e As EventArgs) Handles Button18.Click
-        If Panel5.Visible = False Then
-            Panel5.Visible = True
+    Private Sub Button18_Click(sender As Object, e As EventArgs) Handles BS_Fav.Click
+        If Bs_Favbulle.Visible = False Then
+            Bs_Favbulle.Visible = True
         Else
-            Panel5.Visible = False
+            Bs_Favbulle.Visible = False
         End If
     End Sub
     Private Sub AMouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs)
@@ -734,18 +734,19 @@
         Me.Close()
     End Sub
 
-    Private Sub Button20_Click_1(sender As Object, e As EventArgs) Handles Button20.Click
+    Private Sub Button20_Click_1(sender As Object, e As EventArgs) Handles BS_Browser.Click
         Navigateur.BringToFront()
-        Homestart.Visible = False
+        Bluestart.Visible = False
     End Sub
 
-    Private Sub Button19_Click(sender As Object, e As EventArgs) Handles Button19.Click
+    Private Sub Button19_Click(sender As Object, e As EventArgs) Handles BS_Searchfight.Click
         Fight.BringToFront()
-        Homestart.Visible = False
+        Bluestart.Visible = False
     End Sub
 
     Private Sub Textenotif_Click(sender As Object, e As EventArgs) Handles Textenotif.Click
         Panel1.Visible = True
         Notif_add.Visible = False
     End Sub
+
 End Class
