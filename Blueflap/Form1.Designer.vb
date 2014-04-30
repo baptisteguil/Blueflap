@@ -161,6 +161,7 @@ Partial Class Fenetre_Principale
         Me.BS_DateSetColor = New System.Windows.Forms.Button()
         Me.BS_ImgChoose = New System.Windows.Forms.Button()
         Me.PictureBox9 = New System.Windows.Forms.PictureBox()
+        Me.stng_More = New System.Windows.Forms.Button()
         Me.Navigateur.SuspendLayout()
         CType(Me.Notif_internet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
@@ -632,6 +633,7 @@ Partial Class Fenetre_Principale
         '
         Me.Settings.AutoScroll = True
         Me.Settings.AutoScrollMargin = New System.Drawing.Size(15, 15)
+        Me.Settings.Controls.Add(Me.stng_More)
         Me.Settings.Controls.Add(Me.stng_github)
         Me.Settings.Controls.Add(Me.Label10)
         Me.Settings.Controls.Add(Me.stng_simpleworld)
@@ -692,44 +694,48 @@ Partial Class Fenetre_Principale
         Me.stng_github.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.stng_github.Font = New System.Drawing.Font("Segoe UI Light", 9.75!)
         Me.stng_github.ForeColor = System.Drawing.Color.DeepSkyBlue
-        Me.stng_github.Location = New System.Drawing.Point(235, 672)
+        Me.stng_github.Location = New System.Drawing.Point(235, 710)
         Me.stng_github.Name = "stng_github"
         Me.stng_github.Size = New System.Drawing.Size(154, 35)
         Me.stng_github.TabIndex = 52
         Me.stng_github.Text = "GitHub"
         Me.stng_github.UseVisualStyleBackColor = True
+        Me.stng_github.Visible = False
         '
         'Label10
         '
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Segoe UI Semilight", 11.0!)
-        Me.Label10.Location = New System.Drawing.Point(84, 679)
+        Me.Label10.Location = New System.Drawing.Point(84, 717)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(78, 20)
         Me.Label10.TabIndex = 51
         Me.Label10.Text = "Contribuer"
+        Me.Label10.Visible = False
         '
         'stng_simpleworld
         '
         Me.stng_simpleworld.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.stng_simpleworld.Font = New System.Drawing.Font("Segoe UI Light", 9.75!)
         Me.stng_simpleworld.ForeColor = System.Drawing.Color.DeepSkyBlue
-        Me.stng_simpleworld.Location = New System.Drawing.Point(235, 609)
+        Me.stng_simpleworld.Location = New System.Drawing.Point(235, 647)
         Me.stng_simpleworld.Name = "stng_simpleworld"
         Me.stng_simpleworld.Size = New System.Drawing.Size(154, 35)
         Me.stng_simpleworld.TabIndex = 50
         Me.stng_simpleworld.Text = "Simpleworld"
         Me.stng_simpleworld.UseVisualStyleBackColor = True
+        Me.stng_simpleworld.Visible = False
         '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Segoe UI Semilight", 11.0!)
-        Me.Label2.Location = New System.Drawing.Point(84, 616)
+        Me.Label2.Location = New System.Drawing.Point(84, 654)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(40, 20)
         Me.Label2.TabIndex = 49
         Me.Label2.Text = "Devs"
+        Me.Label2.Visible = False
         '
         'Button1
         '
@@ -1237,7 +1243,7 @@ Partial Class Fenetre_Principale
         Me.ShapeContainer1.Margin = New System.Windows.Forms.Padding(0)
         Me.ShapeContainer1.Name = "ShapeContainer1"
         Me.ShapeContainer1.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.LineShape2, Me.RectangleShape2, Me.RectangleShape1})
-        Me.ShapeContainer1.Size = New System.Drawing.Size(1100, 722)
+        Me.ShapeContainer1.Size = New System.Drawing.Size(1100, 760)
         Me.ShapeContainer1.TabIndex = 17
         Me.ShapeContainer1.TabStop = False
         '
@@ -1245,10 +1251,11 @@ Partial Class Fenetre_Principale
         '
         Me.LineShape2.BorderColor = System.Drawing.SystemColors.AppWorkspace
         Me.LineShape2.Name = "LineShape2"
+        Me.LineShape2.Visible = False
         Me.LineShape2.X1 = 88
         Me.LineShape2.X2 = 818
-        Me.LineShape2.Y1 = 587
-        Me.LineShape2.Y2 = 587
+        Me.LineShape2.Y1 = 626
+        Me.LineShape2.Y2 = 626
         '
         'RectangleShape2
         '
@@ -1542,6 +1549,7 @@ Partial Class Fenetre_Principale
         Me.Infos_code_source.CharWidth = 8
         Me.Infos_code_source.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.Infos_code_source.DisabledColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(180, Byte), Integer))
+        Me.Infos_code_source.Font = New System.Drawing.Font("Courier New", 9.75!)
         Me.Infos_code_source.IndentBackColor = System.Drawing.SystemColors.Control
         Me.Infos_code_source.IsReplaceMode = False
         Me.Infos_code_source.Location = New System.Drawing.Point(74, 194)
@@ -1896,6 +1904,19 @@ Partial Class Fenetre_Principale
         Me.PictureBox9.TabIndex = 1
         Me.PictureBox9.TabStop = False
         '
+        'stng_More
+        '
+        Me.stng_More.FlatAppearance.BorderSize = 0
+        Me.stng_More.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.stng_More.Font = New System.Drawing.Font("Segoe UI Light", 7.0!)
+        Me.stng_More.Location = New System.Drawing.Point(87, 586)
+        Me.stng_More.Name = "stng_More"
+        Me.stng_More.Size = New System.Drawing.Size(62, 20)
+        Me.stng_More.TabIndex = 53
+        Me.stng_More.Text = "Plus..."
+        Me.stng_More.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.stng_More.UseVisualStyleBackColor = True
+        '
         'Fenetre_Principale
         '
         Me.AcceptButton = Me.GoButton
@@ -2097,5 +2118,6 @@ Partial Class Fenetre_Principale
     Friend WithEvents stng_github As System.Windows.Forms.Button
     Friend WithEvents Label10 As System.Windows.Forms.Label
     Friend WithEvents LineShape2 As Microsoft.VisualBasic.PowerPacks.LineShape
+    Friend WithEvents stng_More As System.Windows.Forms.Button
 
 End Class

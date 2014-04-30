@@ -769,4 +769,22 @@
     Private Sub Button3_Click_1(sender As Object, e As EventArgs) Handles stng_github.Click
         Process.Start("https://github.com/SimpleSoftwares/Blueflap")
     End Sub
+
+    Private Sub stng_More_Click(sender As Object, e As EventArgs) Handles stng_More.Click
+        If Label2.Visible = True Then
+            LineShape2.Visible = False
+            Label2.Visible = False
+            stng_simpleworld.Visible = False
+            stng_github.Visible = False
+            Label10.Visible = False
+            stng_More.Text = "Plus..."
+        Else
+            LineShape2.Visible = True
+            Label2.Visible = True
+            stng_simpleworld.Visible = True
+            stng_github.Visible = True
+            Label10.Visible = True
+            stng_More.Text = "Moins"
+        End If
+    End Sub
 End Class
