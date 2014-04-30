@@ -239,7 +239,7 @@
         Verr_BlackEffect.Left = (Me.Width - Verr_BlackEffect.Width) / 2
         Verr_Time.Text = System.DateTime.Now.ToString("HH:mm")
         Verr_Date.Text = System.DateTime.Now.ToString("dddd dd MMMM yyyy")
-        If Not Bluestart.Tag = "" Then
+        If Not Bluestart.Tag Is DBNull.Value Then
             If System.IO.File.Exists(Bluestart.Tag) Then
                 Dim fileeName As String = System.IO.Path.GetFullPath(Bluestart.Tag)
                 Bluestart.BackgroundImage = Image.FromFile(Bluestart.Tag)

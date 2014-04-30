@@ -59,6 +59,11 @@ Partial Class Fenetre_Principale
         Me.Menu_Lock = New System.Windows.Forms.ToolStripMenuItem()
         Me.Menu_FullScr = New System.Windows.Forms.ToolStripMenuItem()
         Me.Settings = New System.Windows.Forms.Panel()
+        Me.stng_github = New System.Windows.Forms.Button()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.stng_simpleworld = New System.Windows.Forms.Button()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.Stng_ShowLicense = New System.Windows.Forms.Button()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.Stng_bluestart_checkbox = New System.Windows.Forms.CheckBox()
@@ -103,6 +108,7 @@ Partial Class Fenetre_Principale
         Me.Label = New System.Windows.Forms.Label()
         Me.Settings_title = New System.Windows.Forms.Label()
         Me.ShapeContainer1 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
+        Me.LineShape2 = New Microsoft.VisualBasic.PowerPacks.LineShape()
         Me.RectangleShape2 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.RectangleShape1 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.Fight = New System.Windows.Forms.Panel()
@@ -155,12 +161,6 @@ Partial Class Fenetre_Principale
         Me.BS_DateSetColor = New System.Windows.Forms.Button()
         Me.BS_ImgChoose = New System.Windows.Forms.Button()
         Me.PictureBox9 = New System.Windows.Forms.PictureBox()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.stng_simpleworld = New System.Windows.Forms.Button()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.stng_github = New System.Windows.Forms.Button()
-        Me.LineShape2 = New Microsoft.VisualBasic.PowerPacks.LineShape()
         Me.Navigateur.SuspendLayout()
         CType(Me.Notif_internet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
@@ -687,6 +687,64 @@ Partial Class Fenetre_Principale
         Me.Settings.Size = New System.Drawing.Size(1117, 607)
         Me.Settings.TabIndex = 1
         '
+        'stng_github
+        '
+        Me.stng_github.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.stng_github.Font = New System.Drawing.Font("Segoe UI Light", 9.75!)
+        Me.stng_github.ForeColor = System.Drawing.Color.DeepSkyBlue
+        Me.stng_github.Location = New System.Drawing.Point(235, 672)
+        Me.stng_github.Name = "stng_github"
+        Me.stng_github.Size = New System.Drawing.Size(154, 35)
+        Me.stng_github.TabIndex = 52
+        Me.stng_github.Text = "GitHub"
+        Me.stng_github.UseVisualStyleBackColor = True
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Segoe UI Semilight", 11.0!)
+        Me.Label10.Location = New System.Drawing.Point(84, 679)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(78, 20)
+        Me.Label10.TabIndex = 51
+        Me.Label10.Text = "Contribuer"
+        '
+        'stng_simpleworld
+        '
+        Me.stng_simpleworld.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.stng_simpleworld.Font = New System.Drawing.Font("Segoe UI Light", 9.75!)
+        Me.stng_simpleworld.ForeColor = System.Drawing.Color.DeepSkyBlue
+        Me.stng_simpleworld.Location = New System.Drawing.Point(235, 609)
+        Me.stng_simpleworld.Name = "stng_simpleworld"
+        Me.stng_simpleworld.Size = New System.Drawing.Size(154, 35)
+        Me.stng_simpleworld.TabIndex = 50
+        Me.stng_simpleworld.Text = "Simpleworld"
+        Me.stng_simpleworld.UseVisualStyleBackColor = True
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Segoe UI Semilight", 11.0!)
+        Me.Label2.Location = New System.Drawing.Point(84, 616)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(40, 20)
+        Me.Label2.TabIndex = 49
+        Me.Label2.Text = "Devs"
+        '
+        'Button1
+        '
+        Me.Button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Cyan
+        Me.Button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Segoe UI Light", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.Color.DeepSkyBlue
+        Me.Button1.Location = New System.Drawing.Point(328, 538)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(94, 25)
+        Me.Button1.TabIndex = 48
+        Me.Button1.Text = "Help Center"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'Stng_ShowLicense
         '
         Me.Stng_ShowLicense.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -1182,6 +1240,15 @@ Partial Class Fenetre_Principale
         Me.ShapeContainer1.Size = New System.Drawing.Size(1100, 722)
         Me.ShapeContainer1.TabIndex = 17
         Me.ShapeContainer1.TabStop = False
+        '
+        'LineShape2
+        '
+        Me.LineShape2.BorderColor = System.Drawing.SystemColors.AppWorkspace
+        Me.LineShape2.Name = "LineShape2"
+        Me.LineShape2.X1 = 88
+        Me.LineShape2.X2 = 818
+        Me.LineShape2.Y1 = 587
+        Me.LineShape2.Y2 = 587
         '
         'RectangleShape2
         '
@@ -1828,73 +1895,6 @@ Partial Class Fenetre_Principale
         Me.PictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
         Me.PictureBox9.TabIndex = 1
         Me.PictureBox9.TabStop = False
-        '
-        'Button1
-        '
-        Me.Button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Cyan
-        Me.Button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Segoe UI Light", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.Color.DeepSkyBlue
-        Me.Button1.Location = New System.Drawing.Point(328, 538)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(94, 25)
-        Me.Button1.TabIndex = 48
-        Me.Button1.Text = "Help Center"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Segoe UI Semilight", 11.0!)
-        Me.Label2.Location = New System.Drawing.Point(84, 616)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(40, 20)
-        Me.Label2.TabIndex = 49
-        Me.Label2.Text = "Devs"
-        '
-        'stng_simpleworld
-        '
-        Me.stng_simpleworld.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.stng_simpleworld.Font = New System.Drawing.Font("Segoe UI Light", 9.75!)
-        Me.stng_simpleworld.ForeColor = System.Drawing.Color.DeepSkyBlue
-        Me.stng_simpleworld.Location = New System.Drawing.Point(235, 609)
-        Me.stng_simpleworld.Name = "stng_simpleworld"
-        Me.stng_simpleworld.Size = New System.Drawing.Size(154, 35)
-        Me.stng_simpleworld.TabIndex = 50
-        Me.stng_simpleworld.Text = "Simpleworld"
-        Me.stng_simpleworld.UseVisualStyleBackColor = True
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Font = New System.Drawing.Font("Segoe UI Semilight", 11.0!)
-        Me.Label10.Location = New System.Drawing.Point(84, 679)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(78, 20)
-        Me.Label10.TabIndex = 51
-        Me.Label10.Text = "Contribuer"
-        '
-        'stng_github
-        '
-        Me.stng_github.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.stng_github.Font = New System.Drawing.Font("Segoe UI Light", 9.75!)
-        Me.stng_github.ForeColor = System.Drawing.Color.DeepSkyBlue
-        Me.stng_github.Location = New System.Drawing.Point(235, 672)
-        Me.stng_github.Name = "stng_github"
-        Me.stng_github.Size = New System.Drawing.Size(154, 35)
-        Me.stng_github.TabIndex = 52
-        Me.stng_github.Text = "GitHub"
-        Me.stng_github.UseVisualStyleBackColor = True
-        '
-        'LineShape2
-        '
-        Me.LineShape2.BorderColor = System.Drawing.SystemColors.AppWorkspace
-        Me.LineShape2.Name = "LineShape2"
-        Me.LineShape2.X1 = 88
-        Me.LineShape2.X2 = 818
-        Me.LineShape2.Y1 = 587
-        Me.LineShape2.Y2 = 587
         '
         'Fenetre_Principale
         '
