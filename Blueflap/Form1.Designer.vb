@@ -155,6 +155,7 @@ Partial Class Fenetre_Principale
         Me.BS_DateSetColor = New System.Windows.Forms.Button()
         Me.BS_ImgChoose = New System.Windows.Forms.Button()
         Me.PictureBox9 = New System.Windows.Forms.PictureBox()
+        Me.Stng_ShowLicense = New System.Windows.Forms.Button()
         Me.Navigateur.SuspendLayout()
         CType(Me.Notif_internet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
@@ -627,6 +628,7 @@ Partial Class Fenetre_Principale
         '
         Me.Settings.AutoScroll = True
         Me.Settings.AutoScrollMargin = New System.Drawing.Size(15, 15)
+        Me.Settings.Controls.Add(Me.Stng_ShowLicense)
         Me.Settings.Controls.Add(Me.Label17)
         Me.Settings.Controls.Add(Me.Stng_bluestart_checkbox)
         Me.Settings.Controls.Add(Me.Stng_Volet_Mousehover_agrandir)
@@ -964,11 +966,11 @@ Partial Class Fenetre_Principale
         Me.Stng_VersionSystem.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Stng_VersionSystem.AutoSize = True
         Me.Stng_VersionSystem.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Stng_VersionSystem.Location = New System.Drawing.Point(1016, 4)
+        Me.Stng_VersionSystem.Location = New System.Drawing.Point(1015, 23)
         Me.Stng_VersionSystem.Name = "Stng_VersionSystem"
-        Me.Stng_VersionSystem.Size = New System.Drawing.Size(97, 52)
+        Me.Stng_VersionSystem.Size = New System.Drawing.Size(97, 26)
         Me.Stng_VersionSystem.TabIndex = 19
-        Me.Stng_VersionSystem.Text = "Blueflap 3.0 Beta 4" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Build 765" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "---" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Simpleworld"
+        Me.Stng_VersionSystem.Text = "Blueflap 3.0 Beta 4" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
         'Label6
         '
@@ -1456,14 +1458,13 @@ Partial Class Fenetre_Principale
         Me.Infos_code_source.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Infos_code_source.AutoScrollMinSize = New System.Drawing.Size(123, 14)
+        Me.Infos_code_source.AutoScrollMinSize = New System.Drawing.Size(98, 14)
         Me.Infos_code_source.BackBrush = Nothing
         Me.Infos_code_source.BackColor = System.Drawing.SystemColors.Control
         Me.Infos_code_source.CharHeight = 14
         Me.Infos_code_source.CharWidth = 8
         Me.Infos_code_source.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.Infos_code_source.DisabledColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(180, Byte), Integer))
-        Me.Infos_code_source.Font = New System.Drawing.Font("Courier New", 9.75!)
         Me.Infos_code_source.IndentBackColor = System.Drawing.SystemColors.Control
         Me.Infos_code_source.IsReplaceMode = False
         Me.Infos_code_source.Location = New System.Drawing.Point(74, 194)
@@ -1818,17 +1819,30 @@ Partial Class Fenetre_Principale
         Me.PictureBox9.TabIndex = 1
         Me.PictureBox9.TabStop = False
         '
+        'Stng_ShowLicense
+        '
+        Me.Stng_ShowLicense.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Stng_ShowLicense.FlatAppearance.BorderSize = 0
+        Me.Stng_ShowLicense.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Stng_ShowLicense.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Stng_ShowLicense.Location = New System.Drawing.Point(1076, 4)
+        Me.Stng_ShowLicense.Name = "Stng_ShowLicense"
+        Me.Stng_ShowLicense.Size = New System.Drawing.Size(36, 19)
+        Me.Stng_ShowLicense.TabIndex = 47
+        Me.Stng_ShowLicense.Text = "GPL V2"
+        Me.Stng_ShowLicense.UseVisualStyleBackColor = True
+        '
         'Fenetre_Principale
         '
         Me.AcceptButton = Me.GoButton
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1117, 608)
+        Me.Controls.Add(Me.Settings)
         Me.Controls.Add(Me.Navigateur)
         Me.Controls.Add(Me.Infos)
         Me.Controls.Add(Me.Fight)
         Me.Controls.Add(Me.Verrouillage)
-        Me.Controls.Add(Me.Settings)
         Me.Controls.Add(Me.Bluestart)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MinimumSize = New System.Drawing.Size(948, 39)
@@ -2014,5 +2028,6 @@ Partial Class Fenetre_Principale
     Private WithEvents Web As Awesomium.Windows.Forms.WebControl
     Friend WithEvents BS_Browser As System.Windows.Forms.Button
     Friend WithEvents BS_Searchfight As System.Windows.Forms.Button
+    Friend WithEvents Stng_ShowLicense As System.Windows.Forms.Button
 
 End Class

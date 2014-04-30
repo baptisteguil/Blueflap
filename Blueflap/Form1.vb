@@ -749,4 +749,7 @@
         Notif_add.Visible = False
     End Sub
 
+    Private Sub Stng_ShowLicense_Click(sender As Object, e As EventArgs) Handles Stng_ShowLicense.Click
+        Licence.Show()
+    End Sub
 End Class
