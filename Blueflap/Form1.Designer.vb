@@ -59,6 +59,7 @@ Partial Class Fenetre_Principale
         Me.Menu_Lock = New System.Windows.Forms.ToolStripMenuItem()
         Me.Menu_FullScr = New System.Windows.Forms.ToolStripMenuItem()
         Me.Settings = New System.Windows.Forms.Panel()
+        Me.stng_More = New System.Windows.Forms.Button()
         Me.stng_github = New System.Windows.Forms.Button()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.stng_simpleworld = New System.Windows.Forms.Button()
@@ -161,7 +162,6 @@ Partial Class Fenetre_Principale
         Me.BS_DateSetColor = New System.Windows.Forms.Button()
         Me.BS_ImgChoose = New System.Windows.Forms.Button()
         Me.PictureBox9 = New System.Windows.Forms.PictureBox()
-        Me.stng_More = New System.Windows.Forms.Button()
         Me.Navigateur.SuspendLayout()
         CType(Me.Notif_internet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
@@ -689,6 +689,19 @@ Partial Class Fenetre_Principale
         Me.Settings.Size = New System.Drawing.Size(1117, 607)
         Me.Settings.TabIndex = 1
         '
+        'stng_More
+        '
+        Me.stng_More.FlatAppearance.BorderSize = 0
+        Me.stng_More.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.stng_More.Font = New System.Drawing.Font("Segoe UI Light", 7.0!)
+        Me.stng_More.Location = New System.Drawing.Point(87, 586)
+        Me.stng_More.Name = "stng_More"
+        Me.stng_More.Size = New System.Drawing.Size(62, 20)
+        Me.stng_More.TabIndex = 53
+        Me.stng_More.Text = "Plus..."
+        Me.stng_More.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.stng_More.UseVisualStyleBackColor = True
+        '
         'stng_github
         '
         Me.stng_github.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -718,7 +731,7 @@ Partial Class Fenetre_Principale
         Me.stng_simpleworld.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.stng_simpleworld.Font = New System.Drawing.Font("Segoe UI Light", 9.75!)
         Me.stng_simpleworld.ForeColor = System.Drawing.Color.DeepSkyBlue
-        Me.stng_simpleworld.Location = New System.Drawing.Point(235, 647)
+        Me.stng_simpleworld.Location = New System.Drawing.Point(234, 647)
         Me.stng_simpleworld.Name = "stng_simpleworld"
         Me.stng_simpleworld.Size = New System.Drawing.Size(154, 35)
         Me.stng_simpleworld.TabIndex = 50
@@ -757,7 +770,7 @@ Partial Class Fenetre_Principale
         Me.Stng_ShowLicense.FlatAppearance.BorderSize = 0
         Me.Stng_ShowLicense.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Stng_ShowLicense.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Stng_ShowLicense.Location = New System.Drawing.Point(1047, 4)
+        Me.Stng_ShowLicense.Location = New System.Drawing.Point(1037, 4)
         Me.Stng_ShowLicense.Name = "Stng_ShowLicense"
         Me.Stng_ShowLicense.Size = New System.Drawing.Size(48, 19)
         Me.Stng_ShowLicense.TabIndex = 47
@@ -1051,11 +1064,11 @@ Partial Class Fenetre_Principale
         Me.Stng_VersionSystem.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Stng_VersionSystem.AutoSize = True
         Me.Stng_VersionSystem.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Stng_VersionSystem.Location = New System.Drawing.Point(998, 23)
+        Me.Stng_VersionSystem.Location = New System.Drawing.Point(988, 23)
         Me.Stng_VersionSystem.Name = "Stng_VersionSystem"
-        Me.Stng_VersionSystem.Size = New System.Drawing.Size(97, 26)
+        Me.Stng_VersionSystem.Size = New System.Drawing.Size(99, 26)
         Me.Stng_VersionSystem.TabIndex = 19
-        Me.Stng_VersionSystem.Text = "Blueflap 3.0 Beta 4" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        Me.Stng_VersionSystem.Text = "Blueflap 3.0 Beta 4" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "MàJ le 30/04/2014"
         '
         'Label6
         '
@@ -1549,7 +1562,6 @@ Partial Class Fenetre_Principale
         Me.Infos_code_source.CharWidth = 8
         Me.Infos_code_source.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.Infos_code_source.DisabledColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(180, Byte), Integer))
-        Me.Infos_code_source.Font = New System.Drawing.Font("Courier New", 9.75!)
         Me.Infos_code_source.IndentBackColor = System.Drawing.SystemColors.Control
         Me.Infos_code_source.IsReplaceMode = False
         Me.Infos_code_source.Location = New System.Drawing.Point(74, 194)
@@ -1903,19 +1915,6 @@ Partial Class Fenetre_Principale
         Me.PictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
         Me.PictureBox9.TabIndex = 1
         Me.PictureBox9.TabStop = False
-        '
-        'stng_More
-        '
-        Me.stng_More.FlatAppearance.BorderSize = 0
-        Me.stng_More.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.stng_More.Font = New System.Drawing.Font("Segoe UI Light", 7.0!)
-        Me.stng_More.Location = New System.Drawing.Point(87, 586)
-        Me.stng_More.Name = "stng_More"
-        Me.stng_More.Size = New System.Drawing.Size(62, 20)
-        Me.stng_More.TabIndex = 53
-        Me.stng_More.Text = "Plus..."
-        Me.stng_More.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.stng_More.UseVisualStyleBackColor = True
         '
         'Fenetre_Principale
         '
