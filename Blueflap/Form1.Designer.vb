@@ -58,6 +58,7 @@ Partial Class Fenetre_Principale
         Me.Menu_Settings = New System.Windows.Forms.ToolStripMenuItem()
         Me.Menu_Lock = New System.Windows.Forms.ToolStripMenuItem()
         Me.Menu_FullScr = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Menu_Memo = New System.Windows.Forms.ToolStripMenuItem()
         Me.Settings = New System.Windows.Forms.Panel()
         Me.stng_More = New System.Windows.Forms.Button()
         Me.stng_github = New System.Windows.Forms.Button()
@@ -488,7 +489,7 @@ Partial Class Fenetre_Principale
         Me.voletlateral.BackColor = System.Drawing.Color.White
         Me.voletlateral.BackgroundImage = CType(resources.GetObject("voletlateral.BackgroundImage"), System.Drawing.Image)
         Me.voletlateral.Dock = System.Windows.Forms.DockStyle.Left
-        Me.voletlateral.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Menu_Home, Me.Menu_Back, Me.Menu_Forward, Me.Menu_Stop, Me.Menu_Refresh, Me.Menu_Fight, Me.Menu_Favos, Me.Menu_Share, Me.Menu_Settings, Me.Menu_Lock, Me.Menu_FullScr})
+        Me.voletlateral.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Menu_Home, Me.Menu_Back, Me.Menu_Forward, Me.Menu_Stop, Me.Menu_Refresh, Me.Menu_Fight, Me.Menu_Favos, Me.Menu_Share, Me.Menu_Settings, Me.Menu_Lock, Me.Menu_FullScr, Me.Menu_Memo})
         Me.voletlateral.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Table
         Me.voletlateral.Location = New System.Drawing.Point(0, 0)
         Me.voletlateral.Name = "voletlateral"
@@ -628,6 +629,18 @@ Partial Class Fenetre_Principale
         Me.Menu_FullScr.ShortcutKeys = System.Windows.Forms.Keys.F11
         Me.Menu_FullScr.Size = New System.Drawing.Size(105, 24)
         Me.Menu_FullScr.Text = "Plein écran"
+        '
+        'Menu_Memo
+        '
+        Me.Menu_Memo.Font = New System.Drawing.Font("Segoe UI Light", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Menu_Memo.ForeColor = System.Drawing.Color.DeepSkyBlue
+        Me.Menu_Memo.Image = CType(resources.GetObject("Menu_Memo.Image"), System.Drawing.Image)
+        Me.Menu_Memo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Menu_Memo.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.Menu_Memo.Name = "Menu_Memo"
+        Me.Menu_Memo.Size = New System.Drawing.Size(73, 24)
+        Me.Menu_Memo.Text = "Post-It"
+        Me.Menu_Memo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Settings
         '
@@ -1922,8 +1935,8 @@ Partial Class Fenetre_Principale
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1117, 607)
-        Me.Controls.Add(Me.Settings)
         Me.Controls.Add(Me.Navigateur)
+        Me.Controls.Add(Me.Settings)
         Me.Controls.Add(Me.Infos)
         Me.Controls.Add(Me.Fight)
         Me.Controls.Add(Me.Verrouillage)
@@ -2118,5 +2131,6 @@ Partial Class Fenetre_Principale
     Friend WithEvents Label10 As System.Windows.Forms.Label
     Friend WithEvents LineShape2 As Microsoft.VisualBasic.PowerPacks.LineShape
     Friend WithEvents stng_More As System.Windows.Forms.Button
+    Friend WithEvents Menu_Memo As System.Windows.Forms.ToolStripMenuItem
 
 End Class

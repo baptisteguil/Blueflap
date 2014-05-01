@@ -310,13 +310,13 @@ Namespace My
             End Set
         End Property
         
-        <Global.System.Configuration.UserScopedSettingAttribute(), _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute()> _
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Property Hey() As Object
             Get
-                Return CType(Me("Hey"), Object)
+                Return CType(Me("Hey"),Object)
             End Get
-            Set(value As Object)
+            Set
                 Me("Hey") = value
             End Set
         End Property
@@ -366,6 +366,30 @@ Namespace My
             End Get
             Set
                 Me("modern") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Titre du Post-It")>  _
+        Public Property MemoTitle() As String
+            Get
+                Return CType(Me("MemoTitle"),String)
+            End Get
+            Set
+                Me("MemoTitle") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Contenu du Post-It")>  _
+        Public Property MemoContent() As String
+            Get
+                Return CType(Me("MemoContent"),String)
+            End Get
+            Set
+                Me("MemoContent") = value
             End Set
         End Property
     End Class

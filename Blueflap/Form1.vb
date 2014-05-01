@@ -787,4 +787,8 @@
             stng_More.Text = "Moins"
         End If
     End Sub
+
+    Private Sub Menu_Memo_Click(sender As Object, e As EventArgs) Handles Menu_Memo.Click
+        Form4.Show()
+    End Sub
 End Class

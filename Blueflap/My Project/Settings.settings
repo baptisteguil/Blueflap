@@ -86,5 +86,11 @@
     <Setting Name="modern" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
+    <Setting Name="MemoTitle" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Titre du Post-It</Value>
+    </Setting>
+    <Setting Name="MemoContent" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Contenu du Post-It</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
