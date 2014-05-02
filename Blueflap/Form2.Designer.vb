@@ -67,9 +67,9 @@ Partial Class Form2
         Me.Label1.AutoSize = True
         Me.Label1.Location = New System.Drawing.Point(95, 9)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(243, 13)
+        Me.Label1.Size = New System.Drawing.Size(216, 13)
         Me.Label1.TabIndex = 7
-        Me.Label1.Text = "Entrez votre mot de passe pour verrouiller Blueflap"
+        Me.Label1.Text = "Please enter your password for lock Blueflap"
         '
         'Form2
         '
@@ -85,7 +85,7 @@ Partial Class Form2
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Form2"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Verrouiller ?"
+        Me.Text = "Lock ?"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()

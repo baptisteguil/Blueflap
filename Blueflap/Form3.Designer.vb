@@ -46,9 +46,9 @@ Partial Class Form3
         Me.Label1.Font = New System.Drawing.Font("Segoe UI Light", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(65, 11)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(51, 20)
+        Me.Label1.Size = New System.Drawing.Size(68, 20)
         Me.Label1.TabIndex = 1
-        Me.Label1.Text = "Clavier"
+        Me.Label1.Text = "Keyboard"
         '
         'Mouve
         '

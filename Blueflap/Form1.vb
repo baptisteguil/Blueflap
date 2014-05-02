@@ -431,7 +431,7 @@
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles AddFavo_Button.Click
         Notif_add.Visible = True
         If Fav_fav_List.Items.Contains(Web.Source.ToString) Then
-            Textenotif.Text = "Page déjà dans vos favoris"
+            Textenotif.Text = "Current page already in your favorites"
         Else
             My.Settings.Bookmarks.Add(Web.Source.ToString)
             Fav_fav_List.Items.Clear()
@@ -439,7 +439,7 @@
                 Fav_fav_List.Items.Add(Item)
             Next
             AddFavo_Button.BackColor = Color.Azure
-            Textenotif.Text = "Page ajoutée aux favoris"
+            Textenotif.Text = "Current page added in favorites"
         End If
     End Sub
 
@@ -698,10 +698,10 @@
     Private Sub Button17_Click(sender As Object, e As EventArgs) Handles BS_DateSetColor.Click
         If BS_Date.ForeColor = Color.White Then
             BS_Date.ForeColor = Color.Black
-            BS_DateSetColor.Text = "Date : Claire"
+            BS_DateSetColor.Text = "Date : Light"
         Else
             BS_Date.ForeColor = Color.White
-            BS_DateSetColor.Text = "Date : Sombre"
+            BS_DateSetColor.Text = "Date : Dark"
         End If
     End Sub
     Private Sub Flop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles BS_Favlist.Click

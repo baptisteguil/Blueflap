@@ -29,18 +29,6 @@
     <Setting Name="SF2" Type="System.String" Scope="User">
       <Value Profile="(Default)">Bing</Value>
     </Setting>
-    <Setting Name="Bookmarks" Type="System.Collections.Specialized.StringCollection" Scope="User">
-      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
-&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;string&gt;http://www.strikingly.com/blueflap&lt;/string&gt;
-&lt;/ArrayOfString&gt;</Value>
-    </Setting>
-    <Setting Name="Historique" Type="System.Collections.Specialized.StringCollection" Scope="User">
-      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
-&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;string&gt;about:blank&lt;/string&gt;
-&lt;/ArrayOfString&gt;</Value>
-    </Setting>
     <Setting Name="a" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
@@ -75,7 +63,7 @@
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="sombre" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Date : Sombre</Value>
+      <Value Profile="(Default)">Date : Dark</Value>
     </Setting>
     <Setting Name="clair" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">White</Value>
@@ -87,10 +75,22 @@
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="MemoTitle" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Titre du Post-It</Value>
+      <Value Profile="(Default)">Title of the Post-It</Value>
     </Setting>
     <Setting Name="MemoContent" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Contenu du Post-It</Value>
+      <Value Profile="(Default)">Contents of the Post-It</Value>
+    </Setting>
+    <Setting Name="Bookmarks" Type="System.Collections.Specialized.StringCollection" Scope="User">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string&gt;http://www.strikingly.com/blueflap&lt;/string&gt;
+&lt;/ArrayOfString&gt;</Value>
+    </Setting>
+    <Setting Name="Historique" Type="System.Collections.Specialized.StringCollection" Scope="User">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string&gt;about:blank&lt;/string&gt;
+&lt;/ArrayOfString&gt;</Value>
     </Setting>
   </Settings>
 </SettingsFile>
