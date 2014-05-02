@@ -5,6 +5,7 @@ Blueflap
 
 Blueflap est un navigateur internet en VB.NET.
 Ceci est une traduction en anglais du projet de SimpleSoftwares.
+
 -----------------
 
 IMPORTANT :
