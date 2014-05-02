@@ -86,6 +86,7 @@ Partial Class Form4
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Form4"
         Me.Text = "Form4"
+        Me.TopMost = True
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
