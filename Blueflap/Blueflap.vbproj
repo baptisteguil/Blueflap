@@ -186,7 +186,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="WindowChrome.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="AboutBox1.resx">
