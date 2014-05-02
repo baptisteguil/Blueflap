@@ -26,7 +26,7 @@
             ElseIf Stng_MoteurRecherche_URL.Text.Contains("https://") Then
                 Web.Source = New Uri(Stng_MoteurRecherche_URL.Text + SmartAdressbox.Text)
             Else
-                MessageBox.Show("Please check settings oh the search engine")
+                MessageBox.Show("Please check settings of the search engine")
             End If
 
         End If
