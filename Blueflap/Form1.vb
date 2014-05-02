@@ -26,7 +26,7 @@
             ElseIf Stng_MoteurRecherche_URL.Text.Contains("https://") Then
                 Web.Source = New Uri(Stng_MoteurRecherche_URL.Text + SmartAdressbox.Text)
             Else
-                MessageBox.Show("Veuillez vérifier les paramètres du moteur de recherche")
+                MessageBox.Show("Please check settings oh the search engine")
             End If
 
         End If
@@ -172,7 +172,7 @@
             Web.Source = New Uri(Stng_HomePage_Url.Text)
         Else
             Web.Source = New Uri("http://google.fr")
-            MessageBox.Show("La page d'accueil définie dans les paramètres n'est pas valide")
+            MessageBox.Show("The home page define in the settings aren't valid")
         End If
 
         If Stng_Volet_reduire.Checked = True Then
@@ -269,7 +269,7 @@
                 Web.Source = New Uri(Stng_HomePage_Url.Text)
             Else
                 Web.Source = New Uri("http://google.fr")
-                MessageBox.Show("La page d'accueil définie dans les paramètres n'est pas valide")
+                MessageBox.Show("The home page define in the settings aren't valid")
             End If
         End If
     End Sub
@@ -293,11 +293,11 @@
             Me.FormBorderStyle = Windows.Forms.FormBorderStyle.None
             Me.WindowState = FormWindowState.Normal
             Me.WindowState = FormWindowState.Maximized
-            Menu_FullScr.Text = "Mode fenêtre"
+            Menu_FullScr.Text = "Windowed"
         Else
             Me.FormBorderStyle = Windows.Forms.FormBorderStyle.Sizable
             Me.WindowState = FormWindowState.Normal
-            Menu_FullScr.Text = "Plein écran"
+            Menu_FullScr.Text = "Full screen"
         End If
     End Sub
 
@@ -510,7 +510,7 @@
     End Sub
 
     Private Sub Awesomium_Windows_Forms_WebControl_Crashed(sender As Object, e As Awesomium.Core.CrashedEventArgs) Handles Web.Crashed
-        MessageBox.Show("Une erreur est survenue, actualisez la page")
+        MessageBox.Show("An error has occurred, refresh the page")
     End Sub
 
     Private Sub Button13_Click(sender As Object, e As EventArgs)
@@ -675,7 +675,7 @@
         ElseIf Stng_MoteurRecherche_URL.Text.Contains("https://") Then
             Web.Source = New Uri(Stng_MoteurRecherche_URL.Text + Bs_Searchbox.Text)
         Else
-            MessageBox.Show("Veuillez vérifier les paramètres du moteur de recherche")
+            MessageBox.Show("Please chek the settings of the search engine")
         End If
         Navigateur.BringToFront()
         Bluestart.Visible = False
@@ -777,14 +777,14 @@
             stng_simpleworld.Visible = False
             stng_github.Visible = False
             Label10.Visible = False
-            stng_More.Text = "Plus..."
+            stng_More.Text = "More ..."
         Else
             LineShape2.Visible = True
             Label2.Visible = True
             stng_simpleworld.Visible = True
             stng_github.Visible = True
             Label10.Visible = True
-            stng_More.Text = "Moins"
+            stng_More.Text = "Less"
         End If
     End Sub
 
